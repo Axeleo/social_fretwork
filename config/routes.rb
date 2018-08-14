@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/login/musos', to: 'logins#musos'
   get '/login/hosts', to: 'logins#hosts'
 
+  post '/login/musos', to: 'logins#muso_session'
+  post '/login/hosts', to: 'logins#host_session'
 
 
 end
