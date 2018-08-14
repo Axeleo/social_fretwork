@@ -1,11 +1,10 @@
 <h1>login</h1>
-
-<form action="/login/<%= @role %>" method="post">
+<%= form_tag "/login/#{@role}", method: 'post' do %>
     <label for="">email: </label>
     <input type="text" name="email">
 
     <label for="">password:</label>
-    <input type="text" name="password">
+    <input type="password" name="password">
 
     <button>login</button>
-</form>
+<% end %> 

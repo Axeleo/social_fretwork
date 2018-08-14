@@ -1,15 +1,5 @@
 class LoginsController < ApplicationController
-    # def current_user
-    #     Muso.find_by(id: session[:user_id])
-    # end
-
-    # def current_host
-
-    # end
-
-    def logged_in?
-        !!current_muso
-    end
+    
     
     def musos
         @role = 'musos'
@@ -25,7 +15,7 @@ class LoginsController < ApplicationController
         muso = Muso.find_by(email: params[:email])
         if muso && muso.authenticate(params[:password])
             session[:muso_id] = muso.id 
-            redirect '/'
+            redirect_to '/jobs'
             # view job lists
         else
             render :login
@@ -36,7 +26,7 @@ class LoginsController < ApplicationController
         host = Host.find_by(email: params[:email])
         if host && host.authenticate(params[:password])
             session[:host_id] = host.id 
-            redirect '/'
+            redirect_to '/musos'
             # view list of musos
         else
             render :login
