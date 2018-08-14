@@ -8,8 +8,30 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
+    
   <body>
+    <nav>
+      <ul class="main-nav">
+          <div class="left-nav">
+            <li><a href='#'>something</a></li>
+            <li><a href='#'>something</a></li>
+          </div>
+          <div class="home-nav">
+            <li><a href='#'>SOCIAL FRETWORK</a></li>
+          </div>
+          <div class="right-nav">
+            <li><a href='#'>something</a></li>
+            <li><a href='#'>avatar stuff</a></li>
+          </div>
+      </ul>
+    </nav>
+
+
     <%= yield %>
+
+
+    <footer>
+      <p>I'm a footer</p>
+    </footer>
   </body>
 </html>
