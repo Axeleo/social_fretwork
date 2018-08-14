@@ -5,6 +5,7 @@ class MusosController < ApplicationController
 
     def show
         @muso = Muso.find(params[:id])
+        @images = MusoImg.where(muso: @muso)
     end
 
     def new

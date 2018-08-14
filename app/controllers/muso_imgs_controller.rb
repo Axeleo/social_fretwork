@@ -1,2 +1,3 @@
 class MusoImgsController < ApplicationController
+
 end
