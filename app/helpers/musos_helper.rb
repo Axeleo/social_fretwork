@@ -1,0 +1,2 @@
+module MusosHelper
+end
