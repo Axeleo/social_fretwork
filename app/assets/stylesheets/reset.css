@@ -19,11 +19,6 @@ ul {
     padding: 0;
 }
   
-main,
-li {
-    display: block;
-}
-  
 h1,
 h2,
 h3,
@@ -38,7 +33,7 @@ button {
 }
   
 img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     border: 0;
 }
