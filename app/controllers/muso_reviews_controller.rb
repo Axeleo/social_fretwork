@@ -1,0 +1,2 @@
+class MusoReviewsController < ApplicationController
+end

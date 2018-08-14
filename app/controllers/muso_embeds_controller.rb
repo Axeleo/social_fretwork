@@ -1,0 +1,2 @@
+class MusoEmbedsController < ApplicationController
+end
