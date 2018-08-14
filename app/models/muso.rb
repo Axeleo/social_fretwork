@@ -1,4 +1,5 @@
 class Muso < ApplicationRecord
+    acts_as_taggable
     mount_uploader :avatar, AvatarUploader
     has_many :muso_imgs
     has_secure_password

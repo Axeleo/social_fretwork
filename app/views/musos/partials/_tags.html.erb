@@ -1,0 +1,8 @@
+<%= form_tag "/musos/#{@muso.id}/tags", method: "post" do %>
+    
+    <label for="tags">Tags</label>
+    <textarea name="tags"></textarea>
+
+
+    <button>Save my Tags!</button>
+<% end %>
