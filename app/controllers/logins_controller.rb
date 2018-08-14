@@ -32,4 +32,6 @@ class LoginsController < ApplicationController
             render :login
         end
     end
+
+    
 end
