@@ -1,3 +1,38 @@
 // Place all the styles related to the hosts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-nav {
+    display: flex;
+    justify-content: flex-start;
+    background-color: blueviolet;
+    padding: 20px;
+    font-size: 2em;
+}
+
+.left-nav {
+    width: 30%;
+}
+
+.home-nav {
+    width: 30%;
+    margin: 0 auto;
+
+}
+
+.right-nav {
+    width: 30%;
+    text-align: right;
+}
+
+li {
+    padding: 10px;
+    display: inline;
+}
+
+footer {
+    background-color: blueviolet;
+    padding: 10px;
+    text-align: center;
+}
+
