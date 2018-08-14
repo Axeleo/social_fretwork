@@ -1,9 +1,18 @@
-<%= form_tag "jobs/#{@job.id}", method: 'put' do %>
-  <input type="text" name="title" value="<%= @job.title%>">
-  <input type="text" name="duration" value="<%=@job.duration%>">
-  <input type="text" name="budget" value="<%=@job.budget%>">
-  <input type="datetime-local" name="date_time" value="<%=@job.date_time%>">
-  <input type="text" name="location" value="<%=@job.location%>">
+<%= form_tag "/jobs/#{@job.id}", method: 'put' do %>
+  <span>Title</span>
+  <input type="text" name="job[title]" value="<%= @job.title%>">
+  <span>Duration</span>
+  <input type="text" name="job[duration]" value="<%=@job.duration%>">
+  <span>Budget</span>
+  <input type="text" name="job[budget]" value="<%=@job.budget%>">
+  <span>Alter date or Time</span>
+  <%# need to fix the value of date-time %>
+  <input type="datetime-local" name="job[date_time]" value="<%=@job.date_time%>">
+  <span>Location</span>
+  <input type="text" name="job[location]" value="<%=@job.location%>">
   <span>Mark as complete</span>
+  <%# have form showing selected applicant %>
   <div class="mark-complete">Completed</div>
   <button>Update</button>
+<% end %>
+
