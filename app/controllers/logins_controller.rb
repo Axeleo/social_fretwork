@@ -33,5 +33,10 @@ class LoginsController < ApplicationController
         end
     end
 
+    def delete_session
+        session[:user_id] = nil
+        redirect '/login'
+    end
+
     
 end
