@@ -11,3 +11,4 @@ Job.destroy_all
 Host.destroy_all
 require_relative "seeds/muso"
 require_relative "seeds/host"
+require_relative "seeds/job"

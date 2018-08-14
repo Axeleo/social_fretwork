@@ -37,7 +37,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Mic & Kim's Wedding",
@@ -47,7 +47,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Friday Night @ the Tote",
@@ -57,7 +57,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Katrina's Birthday",
@@ -67,7 +67,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Thursday night 80's",
@@ -77,7 +77,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Bar Mitzvah",
@@ -87,7 +87,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Bar Open",
@@ -97,7 +97,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Jazz set Downtown",
@@ -107,7 +107,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Cornerstone Hotel Saturday Night",
@@ -117,7 +117,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Larry's Pub Trivia",
@@ -127,7 +127,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Sunday Sesh @ Grub Cafe",
@@ -137,7 +137,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Saturday Party",
@@ -147,7 +147,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "18th Birthday",
@@ -157,7 +157,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "80th Birthday",
@@ -167,7 +167,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Buck's Party",
@@ -177,7 +177,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "50th Birthday",
@@ -187,7 +187,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Tom & Lisa's Wedding",
@@ -197,7 +197,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "40th Birthday Party",
@@ -207,7 +207,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Dj set at Bartronica",
@@ -217,7 +217,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Smooth Jazz @ the Bank",
@@ -227,7 +227,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Mexican tequila bar opening",
@@ -237,7 +237,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Thursday Arvo cafe slot",
@@ -247,7 +247,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Sam's Birthday",
@@ -257,7 +257,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Street Festival",
@@ -267,7 +267,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "Cultrual festival",
@@ -277,7 +277,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "DJ set @ SubClub",
@@ -287,7 +287,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   },
   {
     title: "DJ set @ Cream",
@@ -297,7 +297,7 @@ jobs_info = [
     host: Host.all.sample,
     date_time: rand_time(days_before),
     filled: false,
-    completed: false
+    complete: false
   }
 ]
 
@@ -310,8 +310,7 @@ jobs_info.each do |job|
     host: job[:host],
     date_time: job[:date_time],
     filled: job[:filled],
-    successful_application: job[:successful_application],
-    completed: job[:completed]
+    complete: job[:complete]
   )
   j.save
 end
