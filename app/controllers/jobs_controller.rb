@@ -21,6 +21,15 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
 
+  def update
+    @job = Job.find(params[:id])
+    if @job.update_attibutes(job_edit_params)
+      redirect_to '/jobs'
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @job = Job.find(params[:id])
     if @job.destroy
@@ -42,17 +51,19 @@ class JobsController < ApplicationController
   private
   def create_autofill_params
     {
-      host_id: current_user.id,
-      succesful_application: false,
-      completed: false
+      # CHANGE THIS ONCE USER HELPERS ARE AVAIABLE
+      host: Host.first,
+      # job_application: ,
+      complete: false,
+      filled: false
     }
   end
 
   def job_create_params
-    params.require(:job).permit(:title, :description, :budget, :location, :date_time, :duration).merge(extra_params)
+    params.require(:job).permit(:title, :description, :budget, :location, :date_time, :duration).merge(create_autofill_params)
   end
 
   def job_edit_params
-    params.require(:job).permit(:title, :description, :budget, :location, :date_time, :duration, :completed)
+    params.require(:job).permit(:title, :description, :budget, :location, :date_time, :duration, :complete)
   end
 end

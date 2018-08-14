@@ -1,0 +1,17 @@
+
+
+<%= form_tag '/jobs', method:'post' do%>
+  <span>Title</span>
+  <input type="text" name="job[title]">
+  <span>Location</span>
+  <input type="text" name="job[location]">
+  <span>Budget</span>
+  <input type="text" name="job[budget]">
+  <span>Select Date</span>
+  <input type="datetime-local" name="job[date_time]">
+  <span>Write a description</span>
+  <input type="text" name="job[description]">
+  <span>How long is the Gig?</span>
+  <input type="text" name="job[duration]">
+  <button>Post Job</button>
+  <% end %>
