@@ -1,4 +1,5 @@
-<%= form_tag "/muso_imgs", method: "post" do %>
-    <input type="file" name="file">
+<%= form_tag "/muso_imgs", method: "post", :enctype =>"multipart/form-data" do %>
+    <%= file_field_tag "file" %>
+    <input type="hidden" name="muso_id" value="<%= @muso.id %>">
     <button>Join up!</button>
 <% end %>

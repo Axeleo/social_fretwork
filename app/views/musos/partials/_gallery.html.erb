@@ -1,3 +1,5 @@
+
+
 <% @images.each do |img| %>
-    <%= image_tag(img.img)%>
+    <%= image_tag(img.img.thumb.url)%>
 <% end %>
