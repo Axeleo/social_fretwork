@@ -45,6 +45,10 @@ class MusosController < ApplicationController
         ##muso destory 
     end
 
+    def create_tags
+        
+    end
+
     private 
     def muso_create_params
         params.require(:muso).permit(:name, :email, :password, :bio, :base_price, :location, :avatar)
