@@ -1,5 +1,8 @@
 <h2><%= @muso.name %></h2>
 
+<%= image_tag(@muso.avatar.thumb.url) %>
 <p><%= @muso.base_price %></p>
 <p><%= @muso.location %></p>
 <p><%= @muso.bio %></p>
+
+<%= render "musos/partials/gallery" %>

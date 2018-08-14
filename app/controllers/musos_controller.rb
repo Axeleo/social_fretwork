@@ -23,15 +23,20 @@ class MusosController < ApplicationController
 
     def edit
         @muso = Muso.find(params[:id])
+        @images = MusoImg.where(muso: @muso)
     end
 
     def update
-        @muso = Muso.find(params[:id])
-        # @muso(muso_edit_params)
-        if @muso.save
-            redirect_to muso_path(@muso.id)
+        muso = Muso.find(params[:id])
+        muso.avatar = params[:file]
+        if muso.save
+            if muso.update_attributes(muso_edit_params)
+                redirect_to muso_path(muso.id)
+            else
+                render :edit
+            end
         else
-            render :edit
+            render "/musos/#{params[:muso_id]}/edit"
         end
     end
 

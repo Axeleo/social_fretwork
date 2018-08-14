@@ -1,0 +1,19 @@
+<%= form_tag "/musos/#{@muso.id}", method: "patch", :enctype =>"multipart/form-data" do %>
+    
+    <%= image_tag(@muso.avatar.thumb.url) if @muso.avatar.present? %>
+    <label for="muso[avatar]">Change Avatar</label>
+    <%= file_field_tag "muso[avatar]" %>
+    
+    <input type="text" name="muso[name]" value="<%= @muso.name %>">
+
+    <label for="muso[email]">Email</label>
+    <input type="email" name="muso[email]" value="<%= @muso.email %>">
+
+    <label for="muso[bio]">Bio</label>
+    <textarea name="muso[bio]"><%= @muso.bio %></textarea>
+
+    <label for="muso[location]">Location</label>
+    <input type="text" name="muso[location]" value="<%= @muso.location %>">
+
+    <button>Save my info!</button>
+<% end %>
