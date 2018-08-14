@@ -1,11 +1,41 @@
-<h2>Job listings</h2>
+<h1>Job listings</h1>
+<div class="sort">
+  <ul>
+    <li><a href='#'>All</a></li>
+    <li><a href='#'>Applied</a></li>
+    <li><a href='#'>Accepted</a></li>
+  </ul>
+</div>
+
 <div class="all-job-listings">
   <% @jobs.each do |job|  %>
-  <article>
-  <h4><%= job.title %></h4>
-  <span class="job-location-date"><%= job.location %></span><%= job.host.name %><%= job.date_time %><
-  <%# Add top tags later %>
-  <span class="job-budget"><%= job.budget %></span>
-  </article>
+    <article>
+      <h4><%= job.title %></h4>
+      <span class="job-location-date"><%= job.location %></span><%= job.host.name %><%= job.date_time %><
+      <%# Add top tags later %>
+      <span class="job-budget"><%= job.budget %></span>
+    </article>
   <% end %>
+  
+  <div class="job-listing">
+    <div class="job-details">
+      <div>
+        <h4>Wedding band needed</h4>
+        <p>Melbourne, VIC</p>
+        <p>Event date: Sat, 23rd Aug '18</p>
+        <p>Start at: 6pm</p>
+        <p>Bla bla bla job description here.</p>
+        <p>Posted by: Host name, timestamp</p>
+      </div>
+      <div>
+        <span>$2,000</span>
+      </div>
+    </div>
+    <div class="apply">
+      <button>apply</button> 
+    </div>
+    
+  </div>
+
+
 </div>
