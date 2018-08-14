@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   resources :jobs
   resources :hosts
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/login/musos', to: 'logins#musos'
+  get '/login/hosts', to: 'logins#hosts'
 
-
+  post '/login/musos', to: 'logins#muso_session'
+  post '/login/hosts', to: 'logins#host_session'
 
 end
