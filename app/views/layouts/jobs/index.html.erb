@@ -1,0 +1,11 @@
+<h2>Job lisitng</h2>
+<div class="all-job-listings">
+  <% @jobs.each do |job|  %>
+  <article>
+  <h4><%= job.title %></h4>
+  <span class="job-location-date"><%= job.location %></span><%= job.host.name %><%= job.date_time %><
+  <%# Add top tags later %>
+  <span class="job-budget"><%= job.budget %></span>
+  </article>
+  <% end %>
+</div>

@@ -1,0 +1,16 @@
+<div class="job-listing-full">
+  <h3><%= @job.title %></h3>
+  <div class="job-info">
+    <span><%= @job.date_time %></span>
+    <span><%= @job.location %></span>
+    <span><%= @job.filled %></span>
+    <span><%= @job.compeletd %></span>
+    <span><%= @job.budget %></span>
+  </div>
+  <p>
+    <%= @job.description %>
+  </p>
+
+  <%# if user is a host add section to select from drop down %>
+</div>
+
