@@ -1,0 +1,17 @@
+<h2>Our Musos</h2>
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>location</td>
+            <td colspan="1"></td>
+        </tr>
+    </thead>
+    <% @musos.each do |muso| %>
+        <tr>
+            <td><%= muso.name %></td>
+            <td><%= muso.location %></td>
+            <td><%= link_to "show" , muso_path(muso.id) %></td>
+        </tr>
+    <% end %>
+</table>

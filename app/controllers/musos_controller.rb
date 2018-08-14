@@ -3,6 +3,10 @@ class MusosController < ApplicationController
         @musos = Muso.all
     end
 
+    def show
+        @muso = Muso.find(params[:id])
+    end
+
     def new
         @muso = Muso.new
     end
@@ -10,7 +14,7 @@ class MusosController < ApplicationController
     def create
         @muso = Muso.new(muso_create_params)
         if @muso.save
-            redirect musos_path
+            redirect_to musos_path
         else
             render :new
         end
@@ -22,9 +26,9 @@ class MusosController < ApplicationController
 
     def update
         @muso = Muso.find(params[:id])
-        @muso(muso_edit_params)
+        # @muso(muso_edit_params)
         if @muso.save
-            redirect muso_path(@muso.id)
+            redirect_to muso_path(@muso.id)
         else
             render :edit
         end
@@ -37,7 +41,7 @@ class MusosController < ApplicationController
 
     private 
     def muso_create_params
-        params.require(:muso).permit(:name, :email, :password_digest, :bio, :base_price, :location, :avatar)
+        params.require(:muso).permit(:name, :email, :password, :bio, :base_price, :location, :avatar)
     end
     def muso_edit_params
         params.require(:muso).permit(:name, :email, :bio, :base_price, :location, :avatar)
