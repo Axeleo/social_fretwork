@@ -21,7 +21,18 @@
           </div>
           <div class="right-nav">
             <li><a href='#'>something</a></li>
-            <li class="user"><a href='#'>avatar stuff</a></li>
+
+            <%# <li><a href='#'>avatar stuff</a></li> %>
+            <li class="user-stuff">
+              <p>user name</p>
+      
+              <form action="/session" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="hidden" name="_method" value="delete">
+                <button>logout</button>
+              </form>
+            </li>
+
           </div>
       </ul>
     </nav>

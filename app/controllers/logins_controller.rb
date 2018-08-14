@@ -16,7 +16,6 @@ class LoginsController < ApplicationController
         if muso && muso.authenticate(params[:password])
             session[:muso_id] = muso.id 
             redirect_to '/jobs'
-            # view job lists
         else
             render :login
         end
@@ -27,16 +26,17 @@ class LoginsController < ApplicationController
         if host && host.authenticate(params[:password])
             session[:host_id] = host.id 
             redirect_to '/musos'
-            # view list of musos
         else
             render :login
         end
     end
 
     def delete_session
-        session[:user_id] = nil
-        redirect '/login'
-    end
 
+        session[:muso_id] = nil
+        session[:host_id] = nil
+        redirect_to '/login/musos'
+        # ^ need to change this to something that makes more sense
+    end
     
 end
