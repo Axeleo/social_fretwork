@@ -19,7 +19,7 @@ class MusosController < ApplicationController
         
         if @muso.save
             session[:muso_id] = @muso.id
-            redirect_to musos_path
+            redirect_to '/jobs'
         else
             render :new
         end
