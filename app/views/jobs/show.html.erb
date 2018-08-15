@@ -24,6 +24,7 @@
     
     <%= job_app.muso.name %>
       <%= form_tag "/job_applications/#{@job.id}/reject", method: 'put' do %>
+      <input type="hidden" name="job_application_id" value="<%= job_app.id %>">
       <button>Reject</button>
       <% end  %>
     <% end %>
@@ -31,6 +32,9 @@
   </div>
   <div class="application-count">
   <p><%= @job.job_applications.count %></p>
+  </div>
+  <div class="muso-application">
+  <%# <% if logged_in? &&   %> %>
   </div>
   <%# if user is a host add section to select from drop down %>
 </div>
