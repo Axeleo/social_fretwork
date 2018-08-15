@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   delete '/session', to: 'logins#delete_session'
 
   get "/search/musos", to: 'search#muso_results'
+  get "/browse/musos", to: 'search#browse_all_musos'
   get '/signup', to: 'logins#muso_or_host_signup'
   
   post "/musos/:id/tags", to: 'musos#create_tags'
