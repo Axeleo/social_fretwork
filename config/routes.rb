@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   post "/musos/:id/tags", to: 'musos#create_tags'
 
   put '/job_applications/:id/reject', to: 'job_applications#reject'
+  put 'jobs/:id/completed', to: 'jobs#mark_job_completed'
 end
 

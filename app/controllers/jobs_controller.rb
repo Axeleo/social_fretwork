@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
   def index
-    @jobs = Job.all_unfilled
+    @jobs = Job.all_open
   end
 
   def show
@@ -40,11 +40,17 @@ class JobsController < ApplicationController
   end
 
   def select_succsessful_application
-    
+ 
   end
 
-  def select_job_completed
-    
+  def mark_job_completed
+    job = Job.find(params[:id])
+    job.complete = true
+     if job.save
+      redirect_to "/jobs"
+    else
+      render :show
+    end
   end
 
 

@@ -10,42 +10,20 @@
   <p>
     <%= @job.description %>
   </p>
-  
-  <div class="apply">
-  <% if logged_in? && current_muso %>
-    <%= form_tag '/job_applications', method: 'post' do%>
-    <input type="hidden" name="job_id" value="<%= @job.id%>">
-    <button>Apply</button>
-    <% end %>
-  <% end %>
-  </div>
 
-  <div class="application">
-  <% @job.job_applications.all_not_rejected.each do |job_app|%>
-    <% if current_host == @job.host %>
-    
-    <%= job_app.muso.name %>
-      <%= form_tag "/job_applications/#{@job.id}/reject", method: 'put' do %>
-      <input type="hidden" name="job_application_id" value="<%= job_app.id %>">
-      <button>Reject</button>
-      <% end  %>
-    <% end %>
-  <% end %>
-  </div>
+  <% if which_user == current_muso %>
+    <%= render "jobs/partials/muso_apply"  %>
+    <%= render "jobs/partials/muso_application" %>
+  <% else  %>
+    <%= render "jobs/partials/mark_complete" %>
+    <%= render "jobs/partials/host_view_applications" %>
+  <% end  %>
 
   <div class="application-count">
   <p><%= @job.job_applications.count %></p>
   </div>
 
-  <div class="muso-application">
-    <% if !!@job.job_applications.find_by(muso_id: current_muso.id) %>
-    <%= current_app = @job.job_applications.find(current_muso.id) %>
-      <%= form_tag "/job_applications/#{@job.id}", method: 'delete' do %>
-        <input type="hidden" name="job_application_id" value="<%=current_app.id%>">
-        <button>Retract Offer</button>
-      <% end %>
-    <% end %>
-  </div>
+
   <%# if user is a host add section to select from drop down %>
 </div>
 
