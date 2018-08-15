@@ -13,7 +13,6 @@ class MusoEmbedsController < ApplicationController
     @muso_embed.url = params[:muso_embeds][:url]
     @muso_embed.muso = current_muso
     @muso_embed.embed_type = 'youtube' 
-    # byebug
     if @muso_embed.save
       redirect_to edit_muso_path(current_muso.id)
     else
