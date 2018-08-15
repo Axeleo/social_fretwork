@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   post "/musos/:id/tags", to: 'musos#create_tags'
 
   delete '/session', to: 'logins#delete_session'
+
+  get '/login', to: 'logins#muso_or_host'
+  get '/hosts/new', to: 'hosts#new'
+
 end
 
