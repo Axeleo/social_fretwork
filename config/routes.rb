@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :job_applications, only: [:create, :delete]
+  resources :job_applications, only: [:create, :destroy]
   resources :muso_imgs
   resources :muso_embeds
   resources :muso_reviews
@@ -24,5 +24,6 @@ Rails.application.routes.draw do
   
   post "/musos/:id/tags", to: 'musos#create_tags'
 
+  put '/job_applications/:id/reject', to: 'job_applications#reject'
 end
 
