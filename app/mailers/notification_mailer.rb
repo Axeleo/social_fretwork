@@ -12,4 +12,10 @@ class NotificationMailer < ApplicationMailer
         @job_app = JobApplication.find(@job.job_application_id)
         mail(to: @job_app.muso.email, subject: 'Social Fretwork: A host wants you to play for them!')
     end
+
+    def completed_job_app_email(job)
+        @job = job
+        @job_app = JobApplication.find(@job.job_application_id)
+        mail(to: @job_app.muso.email, subject: 'Social Fretwork: A host wants you to play for them!')
+    end
 end

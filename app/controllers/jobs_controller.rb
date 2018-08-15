@@ -56,6 +56,7 @@ class JobsController < ApplicationController
     job = Job.find(params[:id])
     job.complete = true
      if job.save
+      NotificationMailer.completed_job_app_email(job).deliver_later
       redirect_to "/jobs"
     else
       render :show
