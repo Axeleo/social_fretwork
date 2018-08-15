@@ -24,13 +24,26 @@
 
             <%# <li><a href='#'>avatar stuff</a></li> %>
             <li class="user-stuff">
-              <p>user name</p>
-      
-              <form action="/session" method="post">
-                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                <input type="hidden" name="_method" value="delete">
-                <button>logout</button>
-              </form>
+              <% if logged_in? %>
+                
+                <p> <%= which_user.name %> </p>
+
+                <form action="/session" method="post">
+                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                  <input type="hidden" name="_method" value="delete">
+                  <button>logout</button>
+                </form>
+
+              <% else %>
+                <form action="/login" method="get">
+                  <button class="">login</button>
+                </form>
+                <form action="/new" method="get">
+                  <button class="">signup</button>
+                </form>
+              <% end %>
+        
+                
             </li>
 
           </div>
