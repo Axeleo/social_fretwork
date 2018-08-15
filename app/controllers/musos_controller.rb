@@ -14,8 +14,11 @@ class MusosController < ApplicationController
     end
     
     def create
+        redirect '/jobs' if logged_in?
         @muso = Muso.new(muso_create_params)
+        
         if @muso.save
+            session[:muso_id] = @muso.id
             redirect_to musos_path
         else
             render :new
