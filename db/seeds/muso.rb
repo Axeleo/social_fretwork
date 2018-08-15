@@ -1,7 +1,7 @@
 musos_info = [
     {
         name: "The Indoor Kites",
-        email:"idk@socialfretwork.com",
+        email:"leah.eramo@gmail.com",
         password: "muso",
         bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, natus, asperiores hic laudantium nostrum voluptatum nam obcaecati animi quisquam eum vitae dolor ea quibusdam nesciunt? Architecto sunt veniam aliquid numquam." ,
         base_price: rand(300) ,
@@ -9,7 +9,7 @@ musos_info = [
     },
     {
         name: "Hot Shame",
-        email:"hs@socialfretwork.com",
+        email:"leah_eramo@hotmail.com",
         password: "muso",
         bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, natus, asperiores hic laudantium nostrum voluptatum nam obcaecati animi quisquam eum vitae dolor ea quibusdam nesciunt? Architecto sunt veniam aliquid numquam." ,
         base_price: rand(300) ,
@@ -17,7 +17,7 @@ musos_info = [
     },
     {
         name: "Electric Moccassins",
-        email:"em@socialfretwork.com",
+        email:"leah.eramo@rea-group.com",
         password: "muso",
         bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, natus, asperiores hic laudantium nostrum voluptatum nam obcaecati animi quisquam eum vitae dolor ea quibusdam nesciunt? Architecto sunt veniam aliquid numquam." ,
         base_price: rand(300) ,
@@ -25,7 +25,7 @@ musos_info = [
     },
     {
         name: "Boogers II esq.",
-        email:"b2e@socialfretwork.com",
+        email:"miss_reah@live.com.au",
         password: "muso",
         bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, natus, asperiores hic laudantium nostrum voluptatum nam obcaecati animi quisquam eum vitae dolor ea quibusdam nesciunt? Architecto sunt veniam aliquid numquam." ,
         base_price: rand(300) ,
@@ -33,7 +33,7 @@ musos_info = [
     },
     {
         name: "Hot Property",
-        email:"hp@socialfretwork.com",
+        email:"nope-no-trash@outlook.com",
         password: "muso",
         bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, natus, asperiores hic laudantium nostrum voluptatum nam obcaecati animi quisquam eum vitae dolor ea quibusdam nesciunt? Architecto sunt veniam aliquid numquam." ,
         base_price: rand(300) ,
