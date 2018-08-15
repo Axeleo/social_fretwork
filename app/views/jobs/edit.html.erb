@@ -16,3 +16,6 @@
   <button>Update</button>
 <% end %>
 
+<%= form_tag "/jobs/#{@job.id}", method: 'delete' do%>
+  <button>Delete</button>
+<% end %>

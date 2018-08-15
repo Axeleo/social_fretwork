@@ -1,3 +1,29 @@
 // Place all the styles related to the jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+    font-size: 2.5em;
+    margin: 50px;
+}
+
+.job-listing {
+    width: 450px;
+    border: 1px solid black;
+    padding: 20px 40px;
+
+}
+
+.job-details {
+    display: flex;
+    justify-content: space-between;  
+}
+
+.apply {
+    text-align: center;
+    margin-top: 10px;  
+}
+
+.apply-btn {
+    width: 200px;
+    height: 30px;
+}

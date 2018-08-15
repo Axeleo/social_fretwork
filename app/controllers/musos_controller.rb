@@ -46,6 +46,13 @@ class MusosController < ApplicationController
         ##muso destory 
     end
 
+    def create_tags
+        @muso = Muso.find(params[:muso_id])
+        @muso.tag_list.add params[:tags].split(',')
+        @muso.save
+        redirect_to edit_muso_path(@muso.id)
+    end
+
     private 
     def muso_create_params
         params.require(:muso).permit(:name, :email, :password, :bio, :base_price, :location, :avatar)
