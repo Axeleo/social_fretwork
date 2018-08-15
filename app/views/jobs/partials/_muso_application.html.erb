@@ -1,0 +1,9 @@
+  <div class="muso-application">
+    <% if !!@job.job_applications.find_by(muso_id: current_muso.id) %>
+    <%= current_app = @job.job_applications.find_by(muso_id: current_muso.id) %>
+      <%= form_tag "/job_applications/#{@job.id}", method: 'delete' do %>
+        <input type="hidden" name="job_application_id" value="<%=current_app.id%>">
+        <button>Retract Offer</button>
+      <% end %>
+    <% end %>
+  </div>
