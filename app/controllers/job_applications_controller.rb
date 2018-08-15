@@ -1,7 +1,18 @@
 class JobApplicationsController < ApplicationController
   
   def create
-    job_app = JobApplication.new(preset_params)
+    job_app = JobApplication.new(
+      job: Job.find(params[:job_id]),
+      muso: current_muso,
+      rejected: false 
+    )
+   
+    if job_app.save
+      redirect_to '/jobs'
+    else
+      @jobs = Job.all
+      render '/jobs/index'
+    end
   end
 
   def delete
@@ -9,6 +20,7 @@ class JobApplicationsController < ApplicationController
     if job_app.destroy
       redirect_to '/jobs'
     else
+      @jobs = Job.all
       render '/jobs/index'
     end
   end

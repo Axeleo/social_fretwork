@@ -10,7 +10,19 @@
   <p>
     <%= @job.description %>
   </p>
-
+  <div class="apply">
+  <% if logged_in? && current_muso %>
+    <%= form_tag '/job_applications', method: 'post' do%>
+    <input type="hidden" name="job_id" value="<%= @job.id%>">
+    <button>Apply</button>
+    <% end %>
+  <% end %>
+  </div>
+  <div class="application">
+  <% @job.job_applications.all_not_rejected.each do |job_app|%>
+  <%= job_app.muso.name %>
+  <% end %>
+  </div>
   <%# if user is a host add section to select from drop down %>
 </div>
 
