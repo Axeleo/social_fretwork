@@ -9,7 +9,7 @@
       <button>Reject</button>
       <% end %>
 
-      <%= form_tag "jobs/#{@job.id}/succesful_applicant", method: 'put' do %>
+      <%= form_tag "/jobs/#{@job.id}/select_successful_applicant", method: 'put' do %>
       <input type="hidden" name="job_application_id" value="<%= job_app.id %>">
       <button>Confirm gig</button>
       <% end %>

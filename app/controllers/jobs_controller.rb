@@ -39,7 +39,15 @@ class JobsController < ApplicationController
     end
   end
 
-  def select_succsessful_application
+  def select_successful_applicant
+    job = Job.find(params[:id])
+    job.job_application_id = JobApplication.find(params[:job_application_id])
+    job.filled = true
+    if job.save
+      redirect_to "/jobs"
+    else
+      render :show
+    end
  
   end
 
