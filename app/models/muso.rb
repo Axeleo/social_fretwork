@@ -4,6 +4,9 @@ class Muso < ApplicationRecord
     mount_uploader :avatar, AvatarUploader
 
     has_many :muso_imgs
+    has_many :job_applications
+    has_many :jobs
+    has_many :muso_reviews, :through => :jobs
 
     has_secure_password
 

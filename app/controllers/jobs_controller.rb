@@ -41,8 +41,9 @@ class JobsController < ApplicationController
 
   def select_successful_applicant
     job = Job.find(params[:id])
-    job.job_application_id = params[:job_application_id]
+    job.job_application = JobApplication.find(params[:job_application_id])
     job.filled = true
+    job.muso = JobApplication.find(params[:job_application_id]).muso
     if job.save
       NotificationMailer.accepted_job_app_email(job).deliver_later
       redirect_to "/jobs"

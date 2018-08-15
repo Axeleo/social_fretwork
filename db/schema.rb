@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_051707) do
+ActiveRecord::Schema.define(version: 2018_08_15_141012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,8 +46,12 @@ ActiveRecord::Schema.define(version: 2018_08_15_051707) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "job_application_id"
+    t.bigint "muso_id"
+    t.bigint "muso_review_id"
     t.index ["host_id"], name: "index_jobs_on_host_id"
     t.index ["job_application_id"], name: "index_jobs_on_job_application_id"
+    t.index ["muso_id"], name: "index_jobs_on_muso_id"
+    t.index ["muso_review_id"], name: "index_jobs_on_muso_review_id"
   end
 
   create_table "muso_embeds", force: :cascade do |t|
@@ -117,6 +121,8 @@ ActiveRecord::Schema.define(version: 2018_08_15_051707) do
   add_foreign_key "job_applications", "jobs"
   add_foreign_key "job_applications", "musos"
   add_foreign_key "jobs", "job_applications"
+  add_foreign_key "jobs", "muso_reviews"
+  add_foreign_key "jobs", "musos"
   add_foreign_key "muso_embeds", "musos"
   add_foreign_key "muso_imgs", "musos"
   add_foreign_key "muso_reviews", "jobs"
