@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :job_applications
+  resources :job_applications, only: [:create, :delete]
   resources :muso_imgs
   resources :muso_embeds
   resources :muso_reviews
@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   post "/musos/:id/tags", to: 'musos#create_tags'
 
   delete '/session', to: 'logins#delete_session'
-
+  
+  get '/login', to: 'logins#muso_or_host'
+  get '/hosts/new', to: 'hosts#new'
+  
   get "/search/musos", to: 'search#muso_results'
 end
+

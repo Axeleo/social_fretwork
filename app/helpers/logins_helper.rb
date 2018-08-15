@@ -8,6 +8,14 @@ module LoginsHelper
     end
 
     def logged_in?
-        !!(current_muso || current_host)
+        !!(current_muso || current_host) 
+    end
+
+    def which_user
+        if current_host != nil
+            current_host
+        else
+            current_muso
+        end
     end
 end
