@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :job_applications
+  resources :job_applications, only: [:create, :delete]
   resources :muso_imgs
   resources :muso_embeds
   resources :muso_reviews
