@@ -11,13 +11,13 @@ class MusoEmbedsController < ApplicationController
   def create
     @muso_embed = MusoEmbed.new
     @muso_embed.url = params[:muso_embeds][:url]
-    @muso_embed.muso = current_muso
+    @muso_embed.muso_id = current_muso.id
     @muso_embed.embed_type = 'youtube' 
-    # byebug
+    byebug
     if @muso_embed.save
       redirect_to edit_muso_path(current_muso.id)
     else
-      render :"musos/show"
+      render "musos/show"
     end
   end
 
@@ -28,7 +28,7 @@ class MusoEmbedsController < ApplicationController
     if @muso_embed.save
       redirect_to muso_embed_path(@muso_id)
     else
-      render :"musos/edit"
+      render "musos/edit"
     end   
   end
 
