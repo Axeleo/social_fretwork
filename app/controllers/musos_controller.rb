@@ -56,6 +56,13 @@ class MusosController < ApplicationController
         redirect_to edit_muso_path(@muso.id)
     end
 
+    def destroy_tags
+        @muso = Muso.find(params[:id])
+        @muso.tag_list.remove params[:tag]
+        @muso.save
+        redirect_to edit_muso_path(@muso.id)
+    end
+
     private 
     def muso_create_params
         params.require(:muso).permit(:name, :email, :password, :bio, :base_price, :location, :avatar)
