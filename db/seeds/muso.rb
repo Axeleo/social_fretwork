@@ -4,7 +4,7 @@ musos_info = [
         email:"idk@socialfretwork.com",
         password: "muso",
         bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, natus, asperiores hic laudantium nostrum voluptatum nam obcaecati animi quisquam eum vitae dolor ea quibusdam nesciunt? Architecto sunt veniam aliquid numquam." ,
-        base_price: "$#{rand(300)} p/h" ,
+        base_price: rand(300) ,
         location: "Melbourne,VIC" 
     },
     {
@@ -12,7 +12,7 @@ musos_info = [
         email:"hs@socialfretwork.com",
         password: "muso",
         bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, natus, asperiores hic laudantium nostrum voluptatum nam obcaecati animi quisquam eum vitae dolor ea quibusdam nesciunt? Architecto sunt veniam aliquid numquam." ,
-        base_price: "$#{rand(300)} p/h" ,
+        base_price: rand(300) ,
         location: "Truganina,VIC" 
     },
     {
@@ -20,7 +20,7 @@ musos_info = [
         email:"em@socialfretwork.com",
         password: "muso",
         bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, natus, asperiores hic laudantium nostrum voluptatum nam obcaecati animi quisquam eum vitae dolor ea quibusdam nesciunt? Architecto sunt veniam aliquid numquam." ,
-        base_price: "$#{rand(300)} p/h" ,
+        base_price: rand(300) ,
         location: "Wollert,VIC" 
     },
     {
@@ -28,7 +28,7 @@ musos_info = [
         email:"b2e@socialfretwork.com",
         password: "muso",
         bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, natus, asperiores hic laudantium nostrum voluptatum nam obcaecati animi quisquam eum vitae dolor ea quibusdam nesciunt? Architecto sunt veniam aliquid numquam." ,
-        base_price: "$#{rand(300)} p/h" ,
+        base_price: rand(300) ,
         location: "Ballarat,VIC" 
     },
     {
@@ -36,7 +36,7 @@ musos_info = [
         email:"hp@socialfretwork.com",
         password: "muso",
         bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, natus, asperiores hic laudantium nostrum voluptatum nam obcaecati animi quisquam eum vitae dolor ea quibusdam nesciunt? Architecto sunt veniam aliquid numquam." ,
-        base_price: "$#{rand(300)} p/h" ,
+        base_price: rand(300) ,
         location: "Melbourne,VIC" 
     },
     {
@@ -44,7 +44,7 @@ musos_info = [
         email:"ss@socialfretwork.com",
         password: "muso",
         bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, natus, asperiores hic laudantium nostrum voluptatum nam obcaecati animi quisquam eum vitae dolor ea quibusdam nesciunt? Architecto sunt veniam aliquid numquam." ,
-        base_price: "$#{rand(300)} p/h" ,
+        base_price: rand(300) ,
         location: "Melbourne,VIC" 
     }
 ]
