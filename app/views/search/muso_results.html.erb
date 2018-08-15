@@ -4,11 +4,13 @@
     <input type="text" name="name_q" value="<%= @filters[:name_q] if !!@filters %>">
     location
     <input type="text" name="location_q" value="<%= @filters[:location_q] if !!@filters %>">
+    keywords (comma seperated):
+    <input type="text" name="key_words">
     base price:
     min
-    <input type="text" name="bprice_min" value="<%= @filters[:bprice_min] if !!@filters %>">
+    <input type="number" name="bprice_min" value="<%= @filters[:bprice_min] if !!@filters %>">
     max
-    <input type="text" name="bprice_max" value="<%= @filters[:bprice_max] if !!@filters %>">
+    <input type="number" name="bprice_max" value="<%= @filters[:bprice_max] if !!@filters %>">
     <button>Search...</button>
 </form>
 
