@@ -1,0 +1,9 @@
+<form action="/search/musos" method="get">
+    <input type="text" name="q">
+    <button>Search...</button>
+</form>
+
+<% @muso_results.each do |muso| %>
+    <p><%= muso.name %></p>
+
+<% end %>
