@@ -1,8 +1,14 @@
+<%= link_to "Clear Filters", browse_musos_path %>
 <form action="/search/musos" method="get">
     name
-    <input type="text" name="name_q">
+    <input type="text" name="name_q" value="<%= @filters[:name_q] %>">
     location
-    <input type="text" name="location_q">
+    <input type="text" name="location_q" value="<%= @filters[:location_q] %>">
+    base price:
+    min
+    <input type="text" name="bprice_min" value="<%= @filters[:bprice_min] %>">
+    max
+    <input type="text" name="bprice_max" value="<%= @filters[:bprice_max] %>">
     <button>Search...</button>
 </form>
 
