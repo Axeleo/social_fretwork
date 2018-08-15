@@ -8,6 +8,7 @@ class JobApplicationsController < ApplicationController
     )
    
     if job_app.save
+      send_mail
       redirect_to '/jobs'
     else
       @jobs = Job.all
