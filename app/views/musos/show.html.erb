@@ -1,16 +1,21 @@
 <h2><%= @muso.name %></h2>
 
-<%# <%= image_tag(@muso.avatar.thumb.url) %> %>
+<%# <%= image_tag(@muso.avatar.thumb.url)  %>
 <p><%= @muso.base_price %></p>
 <p><%= @muso.location %></p>
 <p><%= @muso.bio %></p>
 
 <% @muso_embed.each do |muso| %>
-<iframe width="560" height="315" src="<%= muso.url.sub('watch?v=', 'embed/') %>?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+  <% if muso.url.include? 'youtube' %>
+    <iframe width="560" height="315" src="<%= muso.url.sub('watch?v=', 'embed/') %>?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <% else %>
 
-<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100780433&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+  <%= muso.url.sub('<iframe width="100%" height="300"', '<iframe width="50%" height="80"').html_safe %>
+
+  <% end %>
 
 <% end %>
+
 <%= render "musos/partials/gallery" %>
 
