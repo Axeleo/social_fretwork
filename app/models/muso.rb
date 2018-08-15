@@ -5,8 +5,7 @@ class Muso < ApplicationRecord
 
     has_many :muso_imgs
     has_many :job_applications
-    has_many :jobs
-    has_many :muso_reviews, :through => :jobs
+    has_many :muso_reviews
 
     has_secure_password
 

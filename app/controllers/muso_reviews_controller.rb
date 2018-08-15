@@ -9,16 +9,15 @@ class MusoReviewsController < ApplicationController
     end
 
     def create
-        job = Job.find(params[:job_id])
+        @job = Job.find(params[:job_id])
         @review = MusoReview.new(
-            job: job,
+            job: @job,
             rating: params[:rating],
             comment: params[:comment],
+            muso: @job.job_application.muso
         )
         if @review.save
-            job.muso_review = @review
-            job.save
-            redirect_to "/musos/#{job.job_application.muso.id}"
+            redirect_to "/musos/#{@review.muso.id}"
         else
             render :review_job
         end

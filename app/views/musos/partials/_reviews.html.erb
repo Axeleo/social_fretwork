@@ -8,24 +8,25 @@
     </div>
 </div>
 
-<% @muso.jobs.each do |job| %>
+<% @muso.muso_reviews.each do |review| %>
     <div class="review-box">
         <div class="host-avatar">
         </div>
         <div class="review-deets">
             <div class="review-title">
-                <div id="rateYo-<%= job.id %>"></div>
-                <p><%= job.host.name %></p>
+                <div id="rateYo-<%= review.id %>"></div>
+                <p><%= review.job.host.name %></p>
             </div>
             <div>
-                <p><%= job.muso_review.comment %></p>
-                <small><%= job.muso_review.created_at %></small>
+                <p><%= review.comment %></p>
+                <small><%= review.created_at %></small>
             </div>
         </div>
     </div>
     <script>
-            $("#rateYo-<%= job.id %>").rateYo({
-                rating: <%= job.muso_review.rating %>
+            $("#rateYo-<%= review.id %>").rateYo({
+                rating: <%= review.rating %>,
+                readOnly: true
             });
     </script>
 <% end %>
