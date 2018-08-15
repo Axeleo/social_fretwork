@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_000944) do
+ActiveRecord::Schema.define(version: 2018_08_15_051707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 2018_08_15_000944) do
   create_table "muso_embeds", force: :cascade do |t|
     t.string "url", null: false
     t.bigint "muso_id", null: false
-    t.string "embed_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["muso_id"], name: "index_muso_embeds_on_muso_id"
@@ -81,7 +80,7 @@ ActiveRecord::Schema.define(version: 2018_08_15_000944) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.text "bio"
-    t.string "base_price"
+    t.decimal "base_price"
     t.string "location"
     t.string "avatar"
     t.datetime "created_at", null: false
