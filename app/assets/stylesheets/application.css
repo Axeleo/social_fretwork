@@ -12,6 +12,8 @@
  *
  *= require reset
  *= require main
-
+ *= require hosts
+ *= require jobs
+ *= require muso_reviews
  *= require_self
  */
