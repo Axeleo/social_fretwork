@@ -1,8 +1,9 @@
 <h2><%= @muso.name %></h2>
 
-<%= image_tag(@muso.avatar.thumb.url) %>
+<%# <%= image_tag(@muso.avatar.thumb.url) %> %>
 <p><%= @muso.base_price %></p>
 <p><%= @muso.location %></p>
 <p><%= @muso.bio %></p>
+<iframe width="300" height="315" src="<%= @muso_embed.url.sub('watch?v=', 'embed/') %>?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 <%= render "musos/partials/gallery" %>
