@@ -23,7 +23,11 @@ Rails.application.routes.draw do
   get '/signup', to: 'logins#muso_or_host_signup'
   
   post "/musos/:id/tags", to: 'musos#create_tags'
+  delete "/musos/:id/tags", to: 'musos#destroy_tags'
 
   put '/job_applications/:id/reject', to: 'job_applications#reject'
+  put 'jobs/:id/completed', to: 'jobs#mark_job_completed'
+
+  put 'jobs/:id/select_successful_applicant', to: 'jobs#select_successful_applicant'
 end
 
