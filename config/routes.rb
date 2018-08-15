@@ -7,18 +7,21 @@ Rails.application.routes.draw do
   resources :jobs
   resources :hosts
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/login/musos', to: 'logins#musos'
-  get '/login/hosts', to: 'logins#hosts'
 
+  get '/login', to: 'logins#muso_or_host_login'
+
+  get '/login/musos', to: 'logins#musos'
   post '/login/musos', to: 'logins#muso_session'
+
+  get '/login/hosts', to: 'logins#hosts'
   post '/login/hosts', to: 'logins#host_session'
-  post "/musos/:id/tags", to: 'musos#create_tags'
 
   delete '/session', to: 'logins#delete_session'
-  
-  get '/login', to: 'logins#muso_or_host'
-  get '/hosts/new', to: 'hosts#new'
-  
+
   get "/search/musos", to: 'search#muso_results'
+  get '/signup', to: 'logins#muso_or_host_signup'
+  
+  post "/musos/:id/tags", to: 'musos#create_tags'
+
 end
 

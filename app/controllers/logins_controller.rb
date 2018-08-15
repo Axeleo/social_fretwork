@@ -1,7 +1,11 @@
 class LoginsController < ApplicationController
     
-    def muso_or_host
+    def muso_or_host_login
         render :muso_or_host
+    end
+
+    def muso_or_host_signup
+        render :signup_musohost
     end
 
     def musos
