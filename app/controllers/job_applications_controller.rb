@@ -15,7 +15,7 @@ class JobApplicationsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     job_app = JobApplication.find(params[:job_application_id])
     if job_app.destroy
       redirect_to '/jobs'

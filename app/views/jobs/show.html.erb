@@ -20,7 +20,7 @@
   </div>
   <div class="application">
   <% @job.job_applications.all_not_rejected.each do |job_app|%>
-    <% if logged_in? && current_host == @job.host %>
+    <% if current_host == @job.host %>
     
     <%= job_app.muso.name %>
       <%= form_tag "/job_applications/#{@job.id}/reject", method: 'put' do %>
@@ -34,7 +34,13 @@
   <p><%= @job.job_applications.count %></p>
   </div>
   <div class="muso-application">
-  <%# <% if logged_in? &&   %> %>
+    <% if !!@job.job_applications.find_by(muso_id: current_muso.id) %>
+    <%= current_app = @job.job_applications.find(current_muso.id) %>
+      <%= form_tag "/job_applications/#{@job.id}", method: 'delete' do %>
+        <input type="hidden" name="job_application_id" value="<%=current_app.id%>">
+        <button>Retract Offer</button>
+      <% end %>
+    <% end %>
   </div>
   <%# if user is a host add section to select from drop down %>
 </div>
