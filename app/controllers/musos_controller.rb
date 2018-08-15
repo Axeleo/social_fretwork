@@ -46,7 +46,10 @@ class MusosController < ApplicationController
     end
 
     def create_tags
-        
+        @muso = Muso.find(params[:muso_id])
+        @muso.tag_list.add params[:tags].split(',')
+        @muso.save
+        redirect_to edit_muso_path(@muso.id)
     end
 
     private 

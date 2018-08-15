@@ -1,8 +1,15 @@
 <%= form_tag "/musos/#{@muso.id}/tags", method: "post" do %>
     
+    <input type="hidden" name="muso_id" value="<%= @muso.id %>">
     <label for="tags">Tags</label>
     <textarea name="tags"></textarea>
 
 
     <button>Save my Tags!</button>
+<% end %>
+
+<% @muso.tag_list.each do |tag| %>
+
+    <p><%= tag %></p>
+
 <% end %>
