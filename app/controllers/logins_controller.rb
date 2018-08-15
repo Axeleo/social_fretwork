@@ -1,6 +1,9 @@
 class LoginsController < ApplicationController
     
-    
+    def muso_or_host
+        render :muso_or_host
+    end
+
     def musos
         @role = 'musos'
         render :login
@@ -35,7 +38,7 @@ class LoginsController < ApplicationController
 
         session[:muso_id] = nil
         session[:host_id] = nil
-        redirect_to '/login/musos'
+        redirect_to '/login'
         # ^ need to change this to something that makes more sense
     end
     

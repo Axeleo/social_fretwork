@@ -16,3 +16,4 @@ Rails.application.routes.draw do
 
   delete '/session', to: 'logins#delete_session'
 end
+
