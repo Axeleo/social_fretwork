@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :job_applications, only: [:create, :delete]
+  resources :job_applications, only: [:create, :destroy]
   resources :muso_imgs
   resources :muso_embeds
   resources :muso_reviews
@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   get '/login', to: 'logins#muso_or_host'
   get '/hosts/new', to: 'hosts#new'
 
+  put '/job_applications/:id/reject', to: 'job_applications#reject'
 end
 

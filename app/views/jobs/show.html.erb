@@ -20,8 +20,17 @@
   </div>
   <div class="application">
   <% @job.job_applications.all_not_rejected.each do |job_app|%>
-  <%= job_app.muso.name %>
+    <% if logged_in? && current_host == @job.host %>
+    
+    <%= job_app.muso.name %>
+      <%= form_tag "/job_applications/#{@job.id}/reject", method: 'put' do %>
+      <button>Reject</button>
+      <% end  %>
+    <% end %>
   <% end %>
+  </div>
+  <div class="application-count">
+  <p><%= @job.job_applications.count %></p>
   </div>
   <%# if user is a host add section to select from drop down %>
 </div>
