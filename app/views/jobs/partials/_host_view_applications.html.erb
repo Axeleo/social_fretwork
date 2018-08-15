@@ -1,0 +1,12 @@
+  <div class="current-applications">
+  <% @job.job_applications.all_not_rejected.each do |job_app|%>
+    <% if current_host == @job.host %>
+    
+    <%= job_app.muso.name %>
+      <%= form_tag "/job_applications/#{@job.id}/reject", method: 'put' do %>
+      <input type="hidden" name="job_application_id" value="<%= job_app.id %>">
+      <button>Reject</button>
+      <% end  %>
+    <% end %>
+  <% end %>
+  </div>

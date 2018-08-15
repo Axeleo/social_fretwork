@@ -10,6 +10,7 @@
   <p>
     <%= @job.description %>
   </p>
+  
   <div class="apply">
   <% if logged_in? && current_muso %>
     <%= form_tag '/job_applications', method: 'post' do%>
@@ -18,6 +19,7 @@
     <% end %>
   <% end %>
   </div>
+
   <div class="application">
   <% @job.job_applications.all_not_rejected.each do |job_app|%>
     <% if current_host == @job.host %>
@@ -30,9 +32,11 @@
     <% end %>
   <% end %>
   </div>
+
   <div class="application-count">
   <p><%= @job.job_applications.count %></p>
   </div>
+
   <div class="muso-application">
     <% if !!@job.job_applications.find_by(muso_id: current_muso.id) %>
     <%= current_app = @job.job_applications.find(current_muso.id) %>
