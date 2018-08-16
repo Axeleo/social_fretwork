@@ -1,0 +1,50 @@
+@import 'main';
+
+.box-container {
+    width: 75%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 3px solid white;
+    background-color: rgba(35, 35, 58, 0.6);
+    color: whitesmoke;
+    box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.44);
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.input-box {
+    width: 200px;
+    height: 30px;
+    border: none;
+    display: block;
+    margin: 15px auto;
+    padding: 10px;
+    font-size: .8em;
+}
+
+.form-label {
+    margin-top: 10px;
+    // padding: 20px;
+}
+
+.login-title {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.h1-login {
+    margin: 0;
+    margin-top: 20px;
+}
+
+.force-height {
+    height: 80vh;
+}
+
+.submit-btn {
+    border: none;
+    background-color: #30193d;
+    width: 100px;
+    height: 30px;
+}
