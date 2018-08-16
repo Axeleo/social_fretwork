@@ -1,26 +1,13 @@
 <div class="gallery js-flickity"
   data-flickity-options='{ "freeScroll": true, "wrapAround": true }'>
-    <div class="gallery-cell">
-      <h2><%= @musos.name %></h2>
-    </div>
-    <div class="gallery-cell"></div>
-    <div class="gallery-cell"></div>
-    <div class="gallery-cell"></div>
-    <div class="gallery-cell"></div>
-</div>
-
-
-<div class="gallery js-flickity"
-  data-flickity-options='{ "freeScroll": true, "wrapAround": true }'>
-  <div class="gallery-cell">
-    <% @musos.each do |muso| %>
-      <div class="tile" style="background-image:     url(<%= muso.avatar.url(:view) %>);">
+  <% @musos.each do |muso| %>
+    <a href="/musos/<%= muso.id %>">
+      <div class="tile" style="background-image: url(<%= muso.avatar.url(:view) %>);">
         <div class="text">
           <h2><%= muso.name %></h2>
           <p><%= muso.location %></p>
-          <p><%= link_to "show" , muso_path(muso.id) %></p>
         </div>
       </div>
-    <% end %>
-  </div>
+    </a>
+  <% end %>
 </div>
