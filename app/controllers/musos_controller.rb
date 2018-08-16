@@ -63,6 +63,24 @@ class MusosController < ApplicationController
         redirect_to edit_muso_path(@muso.id)
     end
 
+    def old_muso_jobs
+        redirect "/jobs" unless !!current_muso
+        @jobs = Job.completed.select{|job| job.muso == current_muso} 
+        render :"jobs/index"
+    end
+    
+    def muso_jobs
+        redirect_to "/jobs" and return unless !!current_muso
+        @jobs = Job.non_completed.select{|job| job.muso == current_muso} 
+        render :"jobs/index"
+    end
+
+    def muso_applied_jobs
+        redirect_to "/jobs" and return unless !!current_muso
+        @jobs = current_muso.job_applications.map(&:job).select{|job| !job.filled}
+        render :"jobs/index"
+    end
+
     private 
     def muso_create_params
         params.require(:muso).permit(:name, :email, :password, :bio, :base_price, :location, :avatar)
