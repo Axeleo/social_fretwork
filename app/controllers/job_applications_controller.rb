@@ -8,6 +8,7 @@ class JobApplicationsController < ApplicationController
     )
    
     if job_app.save
+      NotificationMailer.new_job_app_email(job_app).deliver_later
       redirect_to '/jobs'
     else
       @jobs = Job.all

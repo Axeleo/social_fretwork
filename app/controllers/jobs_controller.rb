@@ -41,9 +41,10 @@ class JobsController < ApplicationController
 
   def select_successful_applicant
     job = Job.find(params[:id])
-    job.job_application_id = JobApplication.find(params[:job_application_id])
+    job.job_application = JobApplication.find(params[:job_application_id])
     job.filled = true
     if job.save
+      NotificationMailer.accepted_job_app_email(job).deliver_later
       redirect_to "/jobs"
     else
       render :show
@@ -55,7 +56,8 @@ class JobsController < ApplicationController
     job = Job.find(params[:id])
     job.complete = true
      if job.save
-      redirect_to "/jobs"
+      NotificationMailer.completed_job_app_email(job).deliver_later
+      redirect_to "/jobs/#{job.id}/review"
     else
       render :show
     end
