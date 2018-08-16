@@ -14,14 +14,16 @@
     
   <body>
     
-    <nav>
+    <nav class="menu menu--miranda">
       <ul class="main-nav">
-          <div class="left-nav">
-            <li><a href='#'>something</a></li>
-            <li><a href='#'>something</a></li>
-          </div>
-          <div class="home-nav">
-          <a href='/'>
+
+          <% if !logged_in? %>
+            <div class="left-nav">
+              <li class="nav-link menu__item menu__item--current"><a class="menu__link" href='#'>browse musos</a></li>
+              <li class="nav-link menu__item"><a class="menu__link" href='#'>about us</a></li>
+            </div>
+            <div class="home-nav">
+               <a href='/'>
             <div class="logo">
               <div class="upper-fret">
                 <span class="social-text">Social</span>
@@ -33,10 +35,60 @@
               </div>
             </div>
           </a>
-            <li><a href='/'>SOCIAL FRETWORK</a></li>
-          </div>
-          <div class="right-nav">
-            <li><a href='#'>something</a></li>
+            </div>
+            <div class="right-nav">
+              <li class="nav-link menu__item"><a class="menu__link" href='#'>be a muso</a></li>
+
+          <% elsif which_user == current_host %>
+            <div class="left-nav">
+              <li class="nav-link menu__item menu__item--current"><a class="menu__link" href='#'>browse musos</a></li>
+              <li class="nav-link menu__item"><a class="menu__link" href='#'>my events</a></li>
+            </div>
+            <div class="home-nav">
+             <a href='/'>
+            <div class="logo">
+              <div class="upper-fret">
+                <span class="social-text">Social</span>
+                <div class="upper-fret-detail"></div>
+              </div>
+              <div class="lower-fret">
+                <span class="fretwork-text">Fretwork</span>
+                <div class="lower-fret-detail"></div>
+              </div>
+            </div>
+          </a>
+            </div>
+            <div class="right-nav">
+              <li class="nav-link menu__item"><a class="menu__link" href='#'>view profile</a></li>
+
+          <% else %>
+            <div class="left-nav">
+              <li class="nav-link menu__item menu__item--current"><a class="menu__link" href='#'>browse jobs</a></li>
+              <li class="nav-link menu__item"><a class="menu__link" href='#'>my jobs</a></li>
+            </div>
+            <div class="home-nav">
+               <a href='/'>
+            <div class="logo">
+              <div class="upper-fret">
+                <span class="social-text">Social</span>
+                <div class="upper-fret-detail"></div>
+              </div>
+              <div class="lower-fret">
+                <span class="fretwork-text">Fretwork</span>
+                <div class="lower-fret-detail"></div>
+              </div>
+            </div>
+          </a>
+            </div>
+            <div class="right-nav">
+              <li class="nav-link menu__item"><a class="menu__link" href='#'>view profile</a></li>
+              
+          <% end %>
+
+                      
+
+
+
 
             <%# <li><a href='#'>avatar stuff</a></li> %>
             <li class="user-stuff">
