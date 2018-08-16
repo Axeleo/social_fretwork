@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+$color1: #6C6C8B;
+$color2: #A9799C;
+$color3: #F0D8D4;
+$color4: #A3403D;
+$color5: #3C2D84;
+
+
+// fonts
+
+$body-font: 'Raleway', sans-serif;
+$body-font-size: 0.8em;
+$heading-font-size: 2.2em;
+
+@import 'main';
+@import 'home';
+@import 'hosts';
+@import 'jobs';
+@import 'musos';
+@import 'muso_reviews';
+@import 'login-signup';
