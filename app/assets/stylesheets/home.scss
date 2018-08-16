@@ -21,7 +21,7 @@ img {
 }
 
 .h1-home {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 h2 {
@@ -43,9 +43,34 @@ h2 {
 .searchform-container {
   display: flex;
   justify-content: center;
+  align-items: center;
 } 
 
 .search-bar {
   height: 4em;
+  margin-bottom: 3em;
+}
+.search-btn {
+  background-color: rgba(128, 128, 128, 0);
+  font-size: 2em;
+  border: none;
 }
 
+.input-search {
+  height: 2em;
+  width: 10em;
+  font-size: 1.5em;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border-color: white;
+  border-radius: 5px;
+
+}
+
+.input-search:focus {
+  border-radius: 5px;
+}
+
+.fas-fa-search {
+  color: black;
+}
