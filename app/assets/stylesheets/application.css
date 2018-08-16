@@ -12,6 +12,6 @@
  *
  *= require reset
  *= require main
-
+ *= require jobs
  *= require_self
  */
