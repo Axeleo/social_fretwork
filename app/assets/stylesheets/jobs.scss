@@ -175,3 +175,31 @@ h5 {
 }
 
 
+.completed {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    transition: all 2s ease-out;
+    font-size: 1.05em;
+    border:2px solid white;
+    background-color: #249e14;
+    border-radius: 50%;
+    padding: 0.8em;
+}
+
+.mark-complete {
+    position: absolute;
+    top: 3em;
+    right: 0.75em;
+    transition: all 2s ease-out;
+    font-size: 2em;
+    color: black;
+    button {
+        border: 1px solid white;
+        
+    }
+    button:hover {
+        color: white;
+        background-color: #249e14;
+    }
+}
