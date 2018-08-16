@@ -1,21 +1,30 @@
 
-<div class="home-img">
-  <img src="/uploads/muso/backgrounds/micphotot.jpeg" alt="" srcset="">
-</div>
+<body class="home">
+
+  <h1 class="h1-home">Let's Band Together</h1>
+
+  <div class="searchform-container">
+    <form class="search-bar">
+      <input class="input-search" type="text" placeholder="Search...">
+      <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
 
 
-<h2>Featured Artists</h2>
+  <h2>Featured Artists</h2>
 
-<div class="gallery js-flickity"
-  data-flickity-options='{ "freeScroll": true, "wrapAround": true }'>
-  <% @musos.each do |muso| %>
-    <a href="/musos/<%= muso.id %>">
-      <div class="tile" style="background-image: url(<%= muso.avatar.url(:view) %>);">
-        <div class="text">
-          <h2 class="h2-tile"><%= muso.name %></h2>
-          <p><%= muso.location %></p>
+  <div class="gallery js-flickity"
+    data-flickity-options='{ "freeScroll": true, "wrapAround": true }'>
+    <% @musos.each do |muso| %>
+      <a href="/musos/<%= muso.id %>">
+        <div class="tile" style="background-image: url(<%= muso.avatar.url(:view) %>);">
+          <div class="text">
+            <h2 class="h2-tile"><%= muso.name %></h2>
+            <p><%= muso.location %></p>
+          </div>
         </div>
-      </div>
-    </a>
-  <% end %>
-</div>
+      </a>
+    <% end %>
+  </div>
+  
+</body>

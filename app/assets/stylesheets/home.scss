@@ -1,7 +1,10 @@
-body {
-  background-image: url(/uploads/muso/backgrounds/micphotot.jpeg)
+.home {
+  background-image: url(/uploads/muso/backgrounds/micphotot.jpeg);
   // only apply the style on a specific page
   // add class to be specific and add in on the erb. 
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 img {
@@ -15,6 +18,10 @@ img {
 
 .gallery {
   background: rgba(238, 238, 238, 0);
+}
+
+.h1-home {
+  font-size: 2.5em;
 }
 
 h2 {
@@ -33,3 +40,37 @@ h2 {
   height: 40em;
 }
 
+.searchform-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.search-bar {
+  height: 4em;
+  margin-bottom: 3em;
+}
+.search-btn {
+  background-color: rgba(128, 128, 128, 0);
+  font-size: 2em;
+  border: none;
+}
+
+.input-search {
+  height: 2em;
+  width: 10em;
+  font-size: 1.5em;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border-color: white;
+  border-radius: 5px;
+
+}
+
+.input-search:focus {
+  border-radius: 5px;
+}
+
+.fas-fa-search {
+  color: black;
+}
