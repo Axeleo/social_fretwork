@@ -61,3 +61,28 @@
 .delete-btn {
     background-color: salmon;
 }
+
+
+// clippy stuff
+.center-container {
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    text-align: center;
+}
+
+.clippy-host, .clippy-muso {
+    transition: all 0.3 linear;
+}
+
+.clippy-host:hover {
+    background-color: #0072BB;
+    transition: all 0.3s linear;
+}
+
+.clippy-muso:hover {
+    background-color: #85FFC7;
+    transition: all 0.3s linear;
+}
