@@ -26,13 +26,15 @@
     <script>
             $("#rateYo-<%= review.id %>").rateYo({
                 rating: <%= review.rating %>,
-                readOnly: true
+                readOnly: true,
+                starWidth: "20px"
             });
     </script>
 <% end %>
     <script>
             $("#rateYo-average").rateYo({
                 rating: <%= @muso.average_rating %>,
-                readOnly: true
+                readOnly: true,
+                starWidth: "30px"
             });
     </script>

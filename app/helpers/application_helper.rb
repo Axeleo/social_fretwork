@@ -1,5 +1,5 @@
 module ApplicationHelper
     def clean_date_time(dt)
-        dt.strftime("%Y %m %d")
+        dt.strftime("%A %d %m %Y - %l:%M %p")
     end
 end
