@@ -1,3 +1,15 @@
 // Place all the styles related to the muso_imgs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.gallery {
+  background: rgba(238, 238, 238, 0);
+}
+
+.tile {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  counter-increment: gallery-cell;
+}

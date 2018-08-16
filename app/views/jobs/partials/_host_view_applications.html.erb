@@ -1,18 +1,24 @@
+  
+<div class="current-app-columns">
   <div class="current-applications">
-  <% @job.job_applications.all_not_rejected.each do |job_app|%>
     <% if current_host == @job.host %>
-    
-    <%= job_app.muso.name %>
-
-      <%= form_tag "/job_applications/#{@job.id}/reject", method: 'put' do %>
-      <input type="hidden" name="job_application_id" value="<%= job_app.id %>">
-      <button>Reject</button>
+    <span>Current Applications</span>
+    <% @job.job_applications.all_not_rejected.each do |job_app|%>
+    <div class="muso-app">
+      <img src= "<%= job_app.muso.avatar.url(:thumb)%>">
+      <%= job_app.muso.name %>
+      <div class="muso-application-buttons">
+        <%= form_tag "/jobs/#{@job.id}/select_successful_applicant", method: 'put' do %>
+        <input type="hidden" name="job_application_id" value="<%= job_app.id %>">
+        <button class="confirm"><i class="fas fa-check"></i></button>
+        <% end %>
+        <%= form_tag "/job_applications/#{@job.id}/reject", method: 'put' do %>
+        <input type="hidden" name="job_application_id" value="<%= job_app.id %>">
+        <button class="reject"><i class="fas fa-times"></i></button>
       <% end %>
-
-      <%= form_tag "/jobs/#{@job.id}/select_successful_applicant", method: 'put' do %>
-      <input type="hidden" name="job_application_id" value="<%= job_app.id %>">
-      <button>Confirm gig</button>
-      <% end %>
+      </div>
+    </div>
     <% end %>
   <% end %>
   </div>
+</div> 

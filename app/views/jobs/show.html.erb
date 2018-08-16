@@ -1,15 +1,31 @@
-<div class="job-listing-full">
-  <h3><%= @job.title %></h3>
-  <div class="job-info">
-    <span><%= @job.date_time %></span>
-    <span><%= @job.location %></span>
-    <span><%= @job.filled %></span>
-    <span><%= @job.complete %></span>
-    <span><%= @job.budget %></span>
-  </div>
-  <p>
-    <%= @job.description %>
-  </p>
+<div class="force--height">
+
+  <div class="job-listing-full">
+    <h3><%= @job.title %></h3>
+    <div class="job-info">
+      <div class="job-location"> 
+        <span><i class="fas fa-map-marker-alt"></i> <%= @job.location %></span>
+      </div>
+      <div class="job-datetime">
+        <span><i class="far fa-calendar-alt"></i> <%= @job.date_time.to_formatted_s(:short) %></span>
+      </div>
+    </div>
+    <div class="job-show-right">
+      <div class="budget">
+        <span>$ <%= @job.budget %></span>
+      </div>
+      <div class="application-count">
+        <p><%= @job.job_applications.count %></p>
+        <br>
+        <p>Applied</p>
+      </div>
+    </div>
+      <div class="description">
+        <h5>Details</h5>
+        <p>
+          <%= @job.description %>
+        </p>
+      </div>
 
   <% if !!current_muso %>
     <%= render "jobs/partials/muso_apply"  %>
@@ -24,5 +40,5 @@
   <p>Current Applications: <%= @job.job_applications.count %></p>
   </div>
 
-</div>
 
+</div>

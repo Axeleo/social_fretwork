@@ -1,8 +1,10 @@
   <div class="apply">
-  <% if logged_in? && current_muso %>
-    <%= form_tag '/job_applications', method: 'post' do%>
-    <input type="hidden" name="job_id" value="<%= @job.id%>">
-    <button>Apply</button>
-    <% end %>
+  <% if current_muso.job_applications.find_by(job_id: @job.id)%>
+  <div class="applied"><i class="fas fa-check"></i></div>
+  <% elsif logged_in? && current_muso %>
+      <%= form_tag '/job_applications', method: 'post' do%>
+      <input type="hidden" name="job_id" value="<%= @job.id%>">
+      <button>Apply</button>
+      <% end %>
   <% end %>
   </div>
