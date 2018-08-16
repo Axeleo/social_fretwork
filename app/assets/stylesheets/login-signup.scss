@@ -1,4 +1,4 @@
-@import 'main';
+
 
 .box-container {
     width: 75%;
@@ -39,7 +39,7 @@
 }
 
 .force-height {
-    height: 80vh;
+    min-height: 80vh;
 }
 
 .submit-btn, .delete-btn {

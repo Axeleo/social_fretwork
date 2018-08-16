@@ -1,15 +1,9 @@
+
 body {
-    // background:  linear-gradient(
-    //     rgba(14, 0, 0, 0.7), 
-    //     rgba(22, 17, 54, 0.6)
-    //   ), url('https://images.unsplash.com/photo-1533134622340-75ef27ed6c88?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3cc69679442f71054935ae102972b10f&auto=format&fit=crop&w=1350&q=80');
-    // background:  linear-gradient(
-    //     rgba(0, 0, 0, 0.4), 
-    //     rgba(12, 9, 31, 0.3)
-    //   ), url('/diagmonds.png');
     background-image: url('/diagmonds.png');
     // background-size: cover;
     border-image-repeat: stretch;
+    // background-color: blue;
     font-family: $body-font;
     display: flex;
     flex-direction: column;
@@ -23,18 +17,30 @@ body {
 .main-nav {
     display: flex;
     justify-content: flex-start;
-    background-color: rgba($color: rgb(23, 16, 56), $alpha: 0);
-    padding: 20px;
-    font-size: 1.5em;
-    mix-blend-mode: multiply;
-    color: whitesmoke;
-    
+    // background-color: rgba($color: rgb(23, 16, 56), $alpha: 0);
+    padding: 10px 20px;
+    font-size: 1.2em;
+    // mix-blend-mode: multiply;
+    // color: whitesmoke;
+    color: #141414;
+    background-color: #FFE74C;
+    align-items: center;
+    // mix-blend-mode: difference;
 }
 
+li {
+    list-style: none;
+    margin: 10px;
+}
+
+// nav {
+//     mix-blend-mode: multiply;
+//     background-color: #FFE74C;
+// }
 
 .left-nav {
     width: 30%;
-    height: 117px;
+    height: 60px;
     display: flex;
     align-items: center;
 }
@@ -50,7 +56,7 @@ body {
 
 .right-nav {
     width: 30%;
-    height: 117px;
+    height: 60px;
     justify-content: flex-end;
     display: flex;
     align-items: center;
@@ -74,14 +80,49 @@ footer {
 
 // buttonsssss
 .logout-btn, .login-btn, .signup-btn {
-    border: 1px solid white;
+    // border: 1px solid white;
+    border: 1px solid black;
     background-color: rgba(255, 255, 255, 0);
     width: 100px;
     height: 30px;
 }
 
 .logout-btn:hover, .login-btn:hover, .signup-btn:hover {
-    background-color:  rgba(255, 255, 255, .5);
+    // background-color:  rgba(255, 255, 255, .5);
+    background-color:  rgba(0, 0, 0, 1);
+    color: white;
+
 }
+
+
+.nav-link:hover {
+    
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    // padding: 10px;
+    // transition: all .3s ease-out;
+
+    
+}
+
+.tag-btn {
+    width: 50px;
+    height: 20px;
+    background-color: grey;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-left: 5px;
+    
+}
+
+.tag-container {
+    margin-top: 30px;
+}
+
+.top-p {
+    margin: 4px 0 10px 0;
+}
+
 
 

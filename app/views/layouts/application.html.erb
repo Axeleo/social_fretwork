@@ -12,15 +12,15 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </head>
     
-  <body>
-    
-    <nav>
+  <body> 
+    <nav class="menu menu--miranda">
       <ul class="main-nav">
-          <div class="left-nav">
-            <li><a href='#'>something</a></li>
-            <li><a href='#'>something</a></li>
-          </div>
-          <div class="home-nav">
+      <% if !logged_in? %>
+        <div class="left-nav">
+          <li class="nav-link menu__item menu__item--current"><a class="menu__link" href='#'>browse musos</a></li>
+          <li class="nav-link menu__item"><a class="menu__link" href='#'>about us</a></li>
+        </div>
+        <div class="home-nav">
           <a href='/'>
             <div class="logo">
               <div class="upper-fret">
@@ -34,41 +34,62 @@
             </div>
           </a>
           </div>
-          <div class="right-nav">
-            <li><a href='#'>something</a></li>
-
-            <%# <li><a href='#'>avatar stuff</a></li> %>
-            <li class="user-stuff">
-              <% if logged_in? %>
-                <small>logged in as:</small>
-                <p><%= which_user.name %> </p>
-
-                <form action="/session" method="post">
-                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <input type="hidden" name="_method" value="delete">
-                  <button class="logout-btn">logout</button>
-                </form>
-
-              <% else %>
-                <form action="/login" method="get">
-                  <button class="login-btn">login</button>
-                </form>
-                <form action="/signup" method="get">
-                  <button class="signup-btn">signup</button>
-                </form>
-              <% end %>
-        
-                
-            </li>
-
+        </a>
+        </div>
+        <div class="right-nav">
+          <li class="nav-link menu__item"><a class="menu__link" href='#'>view profile</a></li>
+      <% elsif !!current_host %>
+        <div class="left-nav">
+          <li class="nav-link menu__item menu__item--current"><a class="menu__link" href='#'>browse musos</a></li>
+          <li class="nav-link menu__item"><a class="menu__link" href='#'>my events</a></li>
           </div>
+          <div class="home-nav">
+            <a href='/'>
+              <div class="logo">
+                <div class="upper-fret">
+                  <span class="social-text">Social</span>
+                  <div class="upper-fret-detail"></div>
+                </div>
+                <div class="lower-fret">
+                  <span class="fretwork-text">Fretwork</span>
+                  <div class="lower-fret-detail"></div>
+                </div>
+              </div>
+
+            </a>
+          </div>
+        <div class="right-nav">
+          <li class="nav-link menu__item"><a class="menu__link" href='#'>view profile</a></li>
+      <% end  %>
+          <li class="user-stuff">
+            <% if logged_in? %>
+              <small>logged in as:</small>
+              <p><%= which_user.name %> </p>
+
+              <form action="/session" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="hidden" name="_method" value="delete">
+                <button class="logout-btn">logout</button>
+              </form>
+
+            <% else %>
+              <form action="/login" method="get">
+                <button class="login-btn">login</button>
+              </form>
+              <form action="/signup" method="get">
+                <button class="signup-btn">signup</button>
+              </form>
+            <% end %>
+          </li>
+        </div>
       </ul>
     </nav>
     
-    <div class="gradient-bg">
+    <div class="force-height">
+
       <%= yield %>
     </div>
-  
+
     <footer>
       <p>I'm a footer</p>
     </footer>

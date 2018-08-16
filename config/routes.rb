@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :muso_embeds
   resources :musos
   resources :jobs
-  resources :hosts
+  resources :hosts, except: [:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get '/login', to: 'logins#muso_or_host_login'
@@ -30,6 +30,9 @@ Rails.application.routes.draw do
   put 'jobs/:id/completed', to: 'jobs#mark_job_completed'
 
   put 'jobs/:id/select_successful_applicant', to: 'jobs#select_successful_applicant'
+
+  get "/host/jobs/old", to: "hosts#old_host_jobs"
+  get "/host/jobs", to: "hosts#host_jobs"
 
   get '/jobs/:job_id/review', to: 'muso_reviews#review_job'
   post '/jobs/:job_id/review', to: 'muso_reviews#create'
