@@ -27,10 +27,14 @@
   
   melbourne_suburbs = ["Northcote", 'Preston', 'St Kilda', 'Brunswick', 'Abbostford', 'Coburg', 'Melbounre CBD', 'Thorunbury', 'Richmond', 'Brunswick', 'Collingwood', 'Fairfeild']
 
+  names_list = %w"Rikki Brice Deidre Elizebeth Sherika Allyn Linette William Sulema Corie Virginia Joette Helga Greg Ozell Briana Michal Shawanda Mandi Marisol Jalisa Gregorio Vennie Alfonso Joyce Priscila Kenton Gita Maude Alissa Lillia Rosamond Sheldon Gladis Isabel Douglas Annamaria Alethea Magdalen Millicent Eliseo Francisco Ahmad Laine Daniell Yu Loretta Ta Dorthea Natisha"
+
+  events_list = %w"birthday wedding funeral intervention charity-dinner party anniversary bon-voyage"
+
   50.times do
     @muso = Muso.all.sample
     @job = Job.create(
-        title: "DJ set @ Somewhere IDK",
+        title: "#{names_list.sample}'s #{events_list.sample}",
         description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, natus, asperiores hic laudantium nostrum voluptatum nam obcaecati animi quisquam eum vitae dolor ea quibusdam nesciunt? Architecto sunt veniam aliquid numquam.",
         location: "#{melbourne_suburbs.sample}",
         budget: "#{rand_budget(budget_low, budget_high)}",

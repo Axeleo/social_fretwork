@@ -27,15 +27,18 @@
         </p>
       </div>
 
-    <% if which_user == current_muso %>
-      <%= render "jobs/partials/muso_apply"  %>
-      <%= render "jobs/partials/muso_application" %>
-    <% elsif which_user == @job.host %>
-      <%= render "jobs/partials/mark_complete" %>
+  <% if !!current_muso %>
+    <%= render "jobs/partials/muso_apply"  %>
+    <%= render "jobs/partials/muso_application" %>
+  <% end  %>
+  <% if my_job?(@job) %>
+    <%= render "jobs/partials/mark_complete" if @job.filled && !@job.complete %>
+    <% if @job.filled %>
+      <%= render "jobs/partials/host_successfull_app" %>
+    <% else %>
       <%= render "jobs/partials/host_view_applications" %>
-    <% end  %>
-
-  </div>
-
+    <% end %>
+    
+  <% end %>
 
 </div>

@@ -1,21 +1,21 @@
 class SearchController < ApplicationController
     
     def muso_results
-        @filters = params
+        @fltrs = params
 
         queries= []
         
-        queries << [:search_by_name, @filters[:name_q]] unless @filters[:name_q] == ""
+        queries << [:search_by_name, @fltrs[:name_q]] unless @fltrs[:name_q].empty?
 
-        queries << [:search_by_location, @filters[:location_q]] unless @filters[:location_q] == ""
+        queries << [:search_by_loc, @fltrs[:location_q]] unless @fltrs[:location_q].empty?
 
-        queries << [:tagged_with, @filters[:key_words].split(" "), :any => true, :wild => true] unless @filters[:key_words]== ""
-        min_price = @filters[:bprice_min] == "" ? 0 : @filters[:bprice_min].to_f
-        max_price = @filters[:bprice_max] == "" ? 9999999 : @filters[:bprice_max].to_f
+        queries << [:tagged_with, @fltrs[:key_words].split(" "), :any => true, :wild => true] unless @fltrs[:key_words].empty?
+        min_price = @fltrs[:bprice_min].empty? ? 0 : @fltrs[:bprice_min].to_f
+        max_price = @fltrs[:bprice_max].empty? ? 9999999 : @fltrs[:bprice_max].to_f
 
         queries << [:where, :base_price => min_price..max_price] 
 
-        min_rating = @filters[:rating_min] == "" ? 0 : @filters[:min_rating].to_i
+        min_rating = @fltrs[:rating_min].empty? ? 0 : @fltrs[:min_rating].to_i
         
         @muso_results = queries.inject(Muso) { |obj, method_and_args| obj.send(*method_and_args) }.select { |result| result.average_rating >= min_rating }
     end
