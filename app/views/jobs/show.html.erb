@@ -11,16 +11,17 @@
     <%= @job.description %>
   </p>
 
-  <% if which_user == current_muso %>
+  <% if !!current_muso %>
     <%= render "jobs/partials/muso_apply"  %>
     <%= render "jobs/partials/muso_application" %>
-  <% else  %>
+  <% end  %>
+  <% if @job.host == current_host %>
     <%= render "jobs/partials/mark_complete" %>
     <%= render "jobs/partials/host_view_applications" %>
-  <% end  %>
+  <% end %>
 
   <div class="application-count">
-  <p><%= @job.job_applications.count %></p>
+  <p>Current Applications: <%= @job.job_applications.count %></p>
   </div>
 
 </div>

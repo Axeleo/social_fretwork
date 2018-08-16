@@ -31,8 +31,8 @@ Rails.application.routes.draw do
 
   put 'jobs/:id/select_successful_applicant', to: 'jobs#select_successful_applicant'
 
-  get "/host/jobs/old", to: "jobs#old_host_jobs"
-  get "/host/jobs", to: "jobs#host_jobs"
+  get "/host/jobs/old", to: "hosts#old_host_jobs"
+  get "/host/jobs", to: "hosts#host_jobs"
 
   get '/jobs/:job_id/review', to: 'muso_reviews#review_job'
   post '/jobs/:job_id/review', to: 'muso_reviews#create'

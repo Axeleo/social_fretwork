@@ -39,18 +39,6 @@ class JobsController < ApplicationController
     end
   end
 
-  def old_host_jobs
-    redirect "/jobs" unless !!current_host
-    @jobs = Job.completed.where(host: current_host)
-    render :index
-  end
-
-  def host_jobs
-    redirect_to "/jobs" and return unless !!current_host
-    @jobs = Job.where(host: current_host)
-    render :index
-  end
-
   def select_successful_applicant
     job = Job.find(params[:id])
     job.job_application = JobApplication.find(params[:job_application_id])

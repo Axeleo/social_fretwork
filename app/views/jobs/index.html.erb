@@ -5,33 +5,29 @@
 
 <div class="all-job-listings">
   <% @jobs.each do |job|  %>
-    <article>
-      <h4><%= job.title %></h4>
-      <span class="job-location-date"><%= job.location %></span><%= job.host.name %><%= job.date_time %><
-      <%# Add top tags later %>
-      <span class="job-budget"><%= job.budget %></span>
-    </article>
-  <% end %>
-  
   <div class="job-listing">
     <div class="job-details">
       <div>
-        <h4>Wedding band needed</h4>
-        <p>Melbourne, VIC</p>
-        <p>Event date: Sat, 23rd Aug '18</p>
-        <p>Start at: 6pm</p>
-        <p>Bla bla bla job description here.</p>
-        <p>Posted by: Host name, timestamp</p>
+        <h4><%= job.title %></h4>
+        <p><%= job.location %></p>
+        <p>Event time: <%= clean_date_time(job.date_time) %></p>
+        <p><%= job.description%></p>
+        <p>Posted by: <%= job.host.name%></p>
       </div>
       <div>
-        <span>$2,000</span>
+        <span>$<%= job.budget %></span>
       </div>
     </div>
-    <div class="apply">
-      <button class="apply-btn">apply</button> 
-    </div>
-    
+    <% if !!current_muso %>
+      <div class="apply">
+        <%= form_tag "/job_applications", method: "post" do %>
+          <input type="hidden" name="job_id" value="<%= job.id %>">
+          <% unless application_exists(current_muso, job) %>
+            <button class="apply-btn">apply</button> 
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-
-
+  <% end %>
 </div>

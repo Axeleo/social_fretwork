@@ -1,6 +1,10 @@
 class JobApplicationsController < ApplicationController
   
   def create
+    job = Job.find(params[:job_id])
+    if application_exists(current_muso, job) || !current_muso
+      redirect_to "/jobs" and return if Job.find(params[:job_id])
+    end
     job_app = JobApplication.new(
       job: Job.find(params[:job_id]),
       muso: current_muso,

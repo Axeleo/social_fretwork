@@ -3,8 +3,6 @@ class HostsController < ApplicationController
         @host = Host.new
     end
 
-    
-
     def create
         redirect '/musos' if logged_in?
         @host = Host.new(host_create_params)
@@ -14,6 +12,18 @@ class HostsController < ApplicationController
         else
             render :new
         end
+    end
+
+    def old_host_jobs
+        redirect "/jobs" unless !!current_host
+        @jobs = Job.completed.where(host: current_host)
+        render :"jobs/index"
+    end
+    
+    def host_jobs
+    redirect_to "/jobs" and return unless !!current_host
+    @jobs = Job.where(host: current_host)
+    render :"jobs/index"
     end
 
     private
