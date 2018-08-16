@@ -7,7 +7,7 @@
     // border: 3px solid white;
     // background-color: rgba(35, 35, 58, 0.6);
     color: whitesmoke;
-    box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.44);
+    // box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.44);
     text-align: center;
     font-size: 1.3em;
 }
@@ -15,11 +15,13 @@
 .input-box {
     width: 200px;
     height: 30px;
-    border: none;
+    // border: none;
+    border: 2px solid #FFE74C;
     display: block;
-    margin: 15px auto;
+    margin: 10px auto 20px auto;
     padding: 10px;
     font-size: .8em;
+    background-color: #F8FFE5;
 }
 
 .form-label {
@@ -44,14 +46,43 @@
 
 .submit-btn, .delete-btn {
     border: none;
-    background-color: whitesmoke;
-    width: 120px;
-    height: 40px;
-    color: $color5;
-    margin-top: 10px;
+    // background-color: #5DA9E9;
+    background-color: #0072BB;
+    // background-color: #003F91;
+    width: 160px;
+    height: 50px;
+    // color: $color5;
+    // color: #141414;
+    color: whitesmoke;
+    margin-top: 25px;
     font-size: 1em;
 }
 
 .delete-btn {
     background-color: salmon;
+}
+
+
+// clippy stuff
+.center-container {
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    text-align: center;
+}
+
+.clippy-host, .clippy-muso {
+    transition: all 0.3 linear;
+}
+
+.clippy-host:hover {
+    background-color: #0072BB;
+    transition: all 0.3s linear;
+}
+
+.clippy-muso:hover {
+    background-color: #85FFC7;
+    transition: all 0.3s linear;
 }
