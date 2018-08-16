@@ -18,6 +18,12 @@
       <p><%= @muso.bio %></p>
     </div>
 
+    <div>
+      <% @muso.tag_list.each do |tag| %>
+        <span><%= tag %></span>
+
+      <% end %>
+    </div>
 
     <div class="muso-gallery">
       <div class="arrow-left">
