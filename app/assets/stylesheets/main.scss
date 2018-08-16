@@ -19,11 +19,11 @@ body {
     //     rgba(14, 0, 0, 0.7), 
     //     rgba(22, 17, 54, 0.6)
     //   ), url('https://images.unsplash.com/photo-1533134622340-75ef27ed6c88?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3cc69679442f71054935ae102972b10f&auto=format&fit=crop&w=1350&q=80');
-    // background:  linear-gradient(
-    //     rgba(14, 0, 0, 0.7), 
-    //     rgba(22, 17, 54, 0.6)
-    //   ), url('/uploads/diagmonds.png');
-    background-image: url('/uploads/diagmonds.png');
+    background:  linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(12, 9, 31, 0.3)
+      ), url('/diagmonds.png');
+    // background-image: url('/uploads/diagmonds.png');
     // background-size: cover;
     border-image-repeat: stretch;
     font-family: $body-font;
