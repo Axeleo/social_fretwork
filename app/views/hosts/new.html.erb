@@ -1,19 +1,25 @@
-<h2>Sign up to be a host</h2>
+<div class="force-height">
+    <div class="login-title">
+        <h2>Sign up to be a host</h2>
+    </div>
 
-<% @host.errors.full_messages.each do |msg| %>
-    <p><%= msg %></p>
-<% end %>
+    <div class="box-container">
+        <% @host.errors.full_messages.each do |msg| %>
+            <p><%= msg %></p>
+        <% end %>
 
-<%= form_tag "/hosts", method: "post" do %>
+        <%= form_tag "/hosts", method: "post" do %>
 
-    <label for="host[name]">Name</label>
-    <input type="text" name="host[name]">
+            <label for="host[name]">name</label>
+            <input class="input-box" type="text" name="host[name]">
 
-    <label for="host[email]">Email</label>
-    <input type="email" name="host[email]">
+            <label for="host[email]">email</label>
+            <input class="input-box" type="email" name="host[email]">
 
-    <label for="host[password]">Password</label>
-    <input type="password" name="host[password]" >
+            <label for="host[password]">password</label>
+            <input class="input-box" type="password" name="host[password]" >
 
-    <button>Join up!</button>
-<% end %>
+            <button class="submit-btn">Join up!</button>
+        <% end %>
+    </div>
+</div>

@@ -16,6 +16,7 @@
  *= require jobs
  *= require musos
  *= require muso_reviews
+ *= require login-signup
  *= require jquery.rateyo.min.css
  *= require_self
  */
