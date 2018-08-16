@@ -62,11 +62,9 @@ body {
 .right-nav {
     width: 30%;
     height: 117px;
-    text-align: right;
-    li {
-        display: inline-block;
-        vertical-align: middle;
-    }
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
 }
 
 
