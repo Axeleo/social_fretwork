@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
   def index
-    @jobs = Job.all_open
+    @jobs = Job.vacant
   end
 
   def show
@@ -37,6 +37,18 @@ class JobsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def old_host_jobs
+    redirect "/jobs" unless !!current_host
+    @jobs = Job.completed.where(host: current_host)
+    render :index
+  end
+
+  def host_jobs
+    redirect_to "/jobs" and return unless !!current_host
+    @jobs = Job.where(host: current_host)
+    render :index
   end
 
   def select_successful_applicant

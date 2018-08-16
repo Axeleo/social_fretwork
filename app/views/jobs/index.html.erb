@@ -1,10 +1,6 @@
 <h1>Job listings</h1>
 <div class="sort">
-  <ul>
-    <li><a href='#'>All</a></li>
-    <li><a href='#'>Applied</a></li>
-    <li><a href='#'>Accepted</a></li>
-  </ul>
+  <%= render "jobs/partials/host_filters" if !!current_host %>
 </div>
 
 <div class="all-job-listings">
