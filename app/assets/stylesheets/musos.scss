@@ -21,13 +21,9 @@ $green: #88D498;
     width: 75%;
     margin: 20px auto;
     padding: 20px;
-    // border: 2px solid white;
-    // background-color: rgba(35, 35, 58, 0.6);
-    // background-color: rgba(255, 255, 255, 0.7);
-    // background-color: white;
     color: white;
-    box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.44);
-    // border-radius: 10px;
+    // box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.44);
+
     
 }
 
@@ -54,16 +50,18 @@ h2 {
 
 .contact-muso-btn {
     border: none;
-    background-color: $green;
+    // background-color: #85FFC7;
+    background-color: #0072BB;
+    // color: #141414;
+    color: whitesmoke;
     width: 120px;
     height: 40px;
-    font-size: .8em;
-    // border-radius: 3px;
-    // -webkit-box-shadow: 0 10px 6px -6px rgba(110, 127, 144, .5);
-    // -moz-box-shadow: 0 10px 6px -6px rgba(110, 127, 144, .5);
-    // box-shadow: 0 10px 6px -6px rgba(110, 127, 144, .5);
-    color: $color5;
-    border: 1px solid green;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.contact-muso-btn:hover {
+    background-color: #1E91D6;
 }
 
 .muso-embed {
@@ -168,4 +166,55 @@ h2 {
     margin-left: 5px;
     color: white;
     font-size: 2em;
+}
+
+// tag edit stuff
+.cross-btn {
+    display: inline;
+    background-color: grey;
+    border: none;
+    vertical-align: middle;
+    font-size: .9em;
+    cursor: pointer;
+    color: #141414;
+}
+
+.form-inline {
+    display: inline;
+}
+
+
+.tags-flex {
+    margin: 30px 0;
+}
+
+.tag-btn-edit {
+    display: inline-block;
+    background-color: grey;
+    padding: 5px 10px;
+    padding-right: 0px;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+.save-tag-btn {
+    border: none;
+    display: inline;
+    background-color: #0072BB;
+    width: 160px;
+    height: 31px;
+    color: whitesmoke;
+    font-size: 1em;
+    vertical-align: top;
+}
+
+.tag-input {
+    display: inline;
+    width: 200px;
+    height: 30px;
+    border: 2px solid #FFE74C;
+    // margin: 0 auto;
+    padding: 10px;
+    font-size: .8em;
+    background-color: #F8FFE5;
 }

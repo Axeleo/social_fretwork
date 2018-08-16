@@ -6,18 +6,45 @@
 .logo {
   position: relative;
   background-color: white;
+  height: 140%;
+  color: black;
+  font-size: 44px;
 }
 
 .upper-fret {
+  top: 10px;
+  right: 140px;
   position: absolute;
-  border: 1px solid blue;
-  text-align: center
+  border: 3px solid black;
+  text-align: center;
+  padding: 5px 5px 5px 20px;
 }
 
 .lower-fret {
+  top: 85px;
+  right: 40px;
   position: absolute;
-  border: 1px solid red;
-  text-align: center
+  border: 3px solid black;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  font-weight: 200;
+}
+
+.lower-fret-detail {
+  position: absolute;
+  top:-3px;
+  left: -20px;
+  border: 3px solid black;
+  width: 20px;
+  height: 68px;
+}
+.upper-fret-detail {
+  position: absolute;
+  top:-3px;
+  right: -20px;
+  border: 3px solid black;
+  width: 20px;
+  height: 68px;
 }
 
 

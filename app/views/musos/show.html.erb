@@ -3,14 +3,18 @@
     <div class="muso-header">
       <div class="muso-header-left">
         <h2><%= @muso.name %> <span class="stars"> &#9733; &#9733; &#9733; &#9733; &#9733;</span></h2>
-
+        <!--<h2><%= @muso.name %> <div id="rateYo-average"></div></h2>-->
         <%# <%= image_tag(@muso.avatar.thumb.url)  %>
         <p>$<%= @muso.base_price %>/hr</p>
         <p><%= @muso.location %></p>
         
       </div>
       <div class="muso-header-right">
-        <button class="contact-muso-btn">contact</button>
+        <% if current_muso && current_muso.id == session[:muso_id] %>
+          <button class="contact-muso-btn">edit</button>
+        <% else %>
+          <button class="contact-muso-btn">contact</button>
+        <% end %>
       </div>
     </div>
     <div>
