@@ -22,7 +22,8 @@ class JobsController < ApplicationController
   end
 
   def update
-    @job = Job.find(params[:id])
+    @job = Job.find(params[:id])''
+    redirect_to job_path(job.id) and return if my_job?(@job)
     if @job.update_attributes(job_edit_params)
       redirect_to '/jobs'
     else
@@ -32,6 +33,7 @@ class JobsController < ApplicationController
 
   def destroy
     @job = Job.find(params[:id])
+    redirect_to job_path(job.id) and return unless !job.complete && my_job?(@job)
     if @job.destroy
       redirect_to "/jobs"
     else
@@ -41,6 +43,7 @@ class JobsController < ApplicationController
 
   def select_successful_applicant
     job = Job.find(params[:id])
+    redirect_to job_path(job.id) and return unless !job.filled && my_job?(@job)
     job.job_application = JobApplication.find(params[:job_application_id])
     job.filled = true
     if job.save
@@ -54,6 +57,7 @@ class JobsController < ApplicationController
 
   def mark_job_completed
     job = Job.find(params[:id])
+    redirect_to job_path(job.id) and return unless job.filled && my_job?(@job)
     job.complete = true
      if job.save
       NotificationMailer.completed_job_app_email(job).deliver_later

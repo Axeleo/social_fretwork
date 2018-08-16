@@ -1,7 +1,6 @@
   
 <div class="current-app-columns">
   <div class="current-applications">
-    <% if current_host == @job.host %>
     <span>Current Applications</span>
     <% @job.job_applications.all_not_rejected.each do |job_app|%>
     <div class="muso-app">
@@ -19,6 +18,5 @@
       </div>
     </div>
     <% end %>
-  <% end %>
   </div>
 </div> 

@@ -4,6 +4,7 @@ class MusoReviewsController < ApplicationController
     end
     
     def review_job
+        redirect_to jobs_path and return unless my_job_app?(job_app)
         @job = Job.find(params[:job_id])
         @review = MusoReview.new
     end

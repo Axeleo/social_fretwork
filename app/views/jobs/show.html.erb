@@ -31,14 +31,14 @@
     <%= render "jobs/partials/muso_apply"  %>
     <%= render "jobs/partials/muso_application" %>
   <% end  %>
-  <% if @job.host == current_host %>
-    <%= render "jobs/partials/mark_complete" %>
-    <%= render "jobs/partials/host_view_applications" %>
+  <% if my_job?(@job) %>
+    <%= render "jobs/partials/mark_complete" if @job.filled && !@job.complete %>
+    <% if @job.filled %>
+      <%= render "jobs/partials/host_successfull_app" %>
+    <% else %>
+      <%= render "jobs/partials/host_view_applications" %>
+    <% end %>
+    
   <% end %>
-
-  <div class="application-count">
-  <p>Current Applications: <%= @job.job_applications.count %></p>
-  </div>
-
 
 </div>

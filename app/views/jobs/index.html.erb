@@ -1,4 +1,5 @@
 <h1>Job listings</h1>
+
 <div class="sort">
   <%= render "jobs/partials/host_filters" if !!current_host %>
 </div>
@@ -6,29 +7,21 @@
 <%# Search partial should be rendered here %>
 <div class="all-job-listings">
   <% @jobs.each do |job|  %>
-  <div class="job-listing">
-    <div class="job-details">
-      <div>
+  <a href="/jobs/<%=job.id%>">
+    <article>
+      <div class="job-left">
         <h4><%= job.title %></h4>
-        <p><%= job.location %></p>
-        <p>Event time: <%= clean_date_time(job.date_time) %></p>
-        <p><%= job.description%></p>
-        <p>Posted by: <%= job.host.name%></p>
+        <span class="job-location-date"><%= job.location %></span><%= job.date_time.to_formatted_s(:short)%>
       </div>
-      <div>
-        <span>$<%= job.budget %></span>
+      <div class='job-right'>
+        <span class="job-budget">$ <%= job.budget %></span>
+        <span class="job-host"><%= job.host.name %></span>
+        <%# <span> ADD TAGS </span> %>
       </div>
-    </div>
-    <% if !!current_muso %>
-      <div class="apply">
-        <%= form_tag "/job_applications", method: "post" do %>
-          <input type="hidden" name="job_id" value="<%= job.id %>">
-          <% unless application_exists(current_muso, job) %>
-            <button class="apply-btn">apply</button> 
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+    </article>
+    </a>
   <% end %>
 </div>
+
+<script>
+</script>

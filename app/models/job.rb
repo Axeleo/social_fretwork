@@ -12,4 +12,7 @@ class Job < ApplicationRecord
     where(complete: true)
   end
 
+  def self.non_completed
+    where(complete: false)
+  end
 end
