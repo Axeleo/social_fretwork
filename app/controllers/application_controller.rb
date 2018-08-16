@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::Base
     include LoginsHelper
-    include MailHelper
+    # include MailHelper
 end

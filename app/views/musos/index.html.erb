@@ -1,18 +1,20 @@
 
+<div class="musos-list">
     <div class="page-title">
         <h2>Our Musos</h2>
     </div>
-<div class="wrap">
+    <div class="wrap">
 
-    <% @musos.each do |muso| %>
-        <div class="tile">
-            <div class="text">
-                <h2><%= muso.name %></h2>
-                <p><%= muso.location %></p>
-                <p><%= link_to "show" , muso_path(muso.id) %></p>
+        <% @musos.each do |muso| %>
+            <div class="tile">
+                <div class="text">
+                    <h2><%= muso.name %></h2>
+                    <p><%= muso.location %></p>
+                    <p><%= link_to "show" , muso_path(muso.id) %></p>
+                </div>
             </div>
-        </div>
-    <% end %>
+        <% end %>
 
 
+    </div>
 </div>
