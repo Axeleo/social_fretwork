@@ -14,6 +14,7 @@
  *= require main
  *= require hosts
  *= require jobs
+ *= require musos
  *= require muso_reviews
  *= require_self
  */

@@ -1,17 +1,18 @@
-<h2>Our Musos</h2>
-<table>
-    <thead>
-        <tr>
-            <td>Name</td>
-            <td>location</td>
-            <td colspan="1"></td>
-        </tr>
-    </thead>
+
+    <div class="page-title">
+        <h2>Our Musos</h2>
+    </div>
+<div class="wrap">
+
     <% @musos.each do |muso| %>
-        <tr>
-            <td><%= muso.name %></td>
-            <td><%= muso.location %></td>
-            <td><%= link_to "show" , muso_path(muso.id) %></td>
-        </tr>
+        <div class="tile">
+            <div class="text">
+                <h2><%= muso.name %></h2>
+                <p><%= muso.location %></p>
+                <p><%= link_to "show" , muso_path(muso.id) %></p>
+            </div>
+        </div>
     <% end %>
-</table>
+
+
+</div>

@@ -6,10 +6,12 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <%= javascript_include_tag 'application' %>
   </head>
     
   <body>
+    
     <nav>
       <ul class="main-nav">
           <div class="left-nav">
@@ -25,21 +27,21 @@
             <%# <li><a href='#'>avatar stuff</a></li> %>
             <li class="user-stuff">
               <% if logged_in? %>
-                
-                <p> <%= which_user.name %> </p>
+                <small>logged in as:</small>
+                <p><%= which_user.name %> </p>
 
                 <form action="/session" method="post">
                   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                   <input type="hidden" name="_method" value="delete">
-                  <button>logout</button>
+                  <button class="logout-btn">logout</button>
                 </form>
 
               <% else %>
                 <form action="/login" method="get">
-                  <button class="">login</button>
+                  <button class="login-btn">login</button>
                 </form>
                 <form action="/signup" method="get">
-                  <button class="">signup</button>
+                  <button class="signup-btn">signup</button>
                 </form>
               <% end %>
         
@@ -49,11 +51,11 @@
           </div>
       </ul>
     </nav>
-
-
-    <%= yield %>
-
-
+    
+    <div class="gradient-bg">
+      <%= yield %>
+    </div>
+  
     <footer>
       <p>I'm a footer</p>
     </footer>
