@@ -187,7 +187,6 @@ h5 {
     padding: 0.8em;
 }
 
-<<<<<<< HEAD
 .mark-complete {
     position: absolute;
     top: 3em;
@@ -204,6 +203,17 @@ h5 {
         background-color: #249e14;
     }
 }
-=======
 
->>>>>>> master
+.current-applications {
+    display: flex;
+    flex-direction: column;
+}
+
+.muso-app {
+     border-right: 5px solid $color3;
+     display: flex
+}
+
+.muso-application-buttons {
+    align-self: flex-end;
+}
