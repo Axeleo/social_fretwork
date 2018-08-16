@@ -15,11 +15,11 @@
         <div class="review-deets">
             <div class="review-title">
                 <div id="rateYo-<%= review.id %>"></div>
-                <p><%= review.job.host.name %></p>
+                <p class="review-text"><%= review.job.host.name %></p>
             </div>
             <div>
-                <p><%= review.comment %></p>
-                <small><%= clean_date_time(review.created_at) %></small>
+                <p class="review-text"><%= review.comment %></p>
+                <small class="review-small"><%= clean_date_time(review.created_at) %></small>
             </div>
         </div>
     </div>

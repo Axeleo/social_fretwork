@@ -4,7 +4,7 @@
 @import 'main';
 
 .review-header {
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    // border: 1px solid rgba(255, 255, 255, 0.8);
     margin-top: 20px;
     padding: 10px;
     display: flex;
@@ -12,7 +12,7 @@
 }
 
 .review-box {
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    // border: 1px solid rgba(255, 255, 255, 0.8);
     padding: 10px;
     display: flex;
     justify-content: flex-start;
@@ -26,4 +26,12 @@
     border-radius: 50%;
     border: 1px solid white;
     margin: 10px;
+}
+
+.review-text {
+    line-height: 1.5;
+}
+
+.review-small {
+
 }
