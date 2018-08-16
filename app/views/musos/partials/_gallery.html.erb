@@ -1,7 +1,8 @@
-
-<div class="gallery js-flickity"
-  data-flickity-options='{ "freeScroll": true, "wrapAround": true }'>
-    <% @images.each do |img| %>
-        <%= image_tag(img.img.library.url)%>
-    <% end %>
+<div class="gallery-container">
+    <div class="gallery js-flickity"
+    data-flickity-options='{ "freeScroll": true, "wrapAround": true }'>
+        <% @images.each do |img| %>
+            <%= image_tag(img.img.library.url)%>
+        <% end %>
+    </div>
 </div>
