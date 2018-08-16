@@ -217,3 +217,24 @@ h5 {
 .muso-application-buttons {
     align-self: flex-end;
 }
+
+.confirm {
+    height: 100%;
+    padding: 1em;
+    background-color: #249e14;
+    transition: all 1s ease-in;
+}
+
+.reject {
+    height: 100%;
+    padding: 1em;
+    background-color: #d34238;
+    transition: all 1s ease-in;
+}
+
+.confirm:hover {
+    background-color: #4ece3d;
+}
+.reject:hover {
+    background-color: #ec584e;
+}

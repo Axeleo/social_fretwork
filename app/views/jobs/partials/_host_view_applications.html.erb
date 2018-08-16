@@ -9,12 +9,12 @@
       <div class="muso-application-buttons">
       <%= form_tag "/job_applications/#{@job.id}/reject", method: 'put' do %>
       <input type="hidden" name="job_application_id" value="<%= job_app.id %>">
-      <button>Reject</button>
+      <button class="reject">Reject</button>
       <% end %>
 
       <%= form_tag "/jobs/#{@job.id}/select_successful_applicant", method: 'put' do %>
       <input type="hidden" name="job_application_id" value="<%= job_app.id %>">
-      <button>Confirm gig</button>
+      <button class="confirm"><i class="fas fa-check"></button>
       <% end %>
     </div>
     </div>
