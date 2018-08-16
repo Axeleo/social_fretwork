@@ -177,14 +177,15 @@ h5 {
 
 .completed {
     position: absolute;
-    top: 1em;
-    right: 1em;
+    top: 1rem;
+    right: 0.1rem;
     transition: all 2s ease-out;
-    font-size: 1.05em;
+    font-size: 1rem;
     border:2px solid white;
     background-color: #249e14;
-    border-radius: 50%;
     padding: 0.8em;
+    text-align: center;
+    color: white;
 }
 
 .mark-complete {
@@ -207,6 +208,13 @@ h5 {
 .current-applications {
     display: flex;
     flex-direction: column;
+    span {
+        text-align: center;
+        border-bottom: 1px solid $color3;
+        padding-bottom: 1em;
+        width: 50%;
+        margin: 0 auto;
+    }
 }
 
 .muso-app {

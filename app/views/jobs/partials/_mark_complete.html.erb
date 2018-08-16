@@ -1,6 +1,6 @@
 <div class="mark-complete">
   <%  if @job.complete == true %>
-    <div class="completed"> Gig completed<i class="fas fa-check"></div>
+    <div class="completed">Completed<i class="fas fa-check"></i></div>
   <% elsif current_host == @job.host %>
     <%= form_tag "/jobs/#{@job.id}/completed", method: 'put' do %>
     <button>Mark complete</button>
