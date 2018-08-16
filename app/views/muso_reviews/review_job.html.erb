@@ -1,0 +1,25 @@
+<h2>Review <%= @job.job_application.muso.name %></h2>
+
+<% @review.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+<% end %>
+
+<%= form_tag "/jobs/#{@job.id}/review", method: "post" do %>
+    <div id="rateYo"></div>
+    <input type="hidden" name="rating" id="rating">
+
+    <label for="comment">Comment</label>
+    <textarea name="comment"></textarea>
+
+    <button>Leave a Review!</button>
+<% end %>
+
+<script>
+    $("#rateYo").rateYo({
+        starWidth: "40px"
+    });
+
+    $("#rateYo").on("click", () =>{
+        $("#rating").val($("#rateYo").rateYo("rating"))
+    })
+</script>

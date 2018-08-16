@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :job_applications, only: [:create, :destroy]
   resources :muso_imgs
   resources :muso_embeds
-  resources :muso_reviews
   resources :musos
   resources :jobs
   resources :hosts
@@ -29,5 +28,8 @@ Rails.application.routes.draw do
   put 'jobs/:id/completed', to: 'jobs#mark_job_completed'
 
   put 'jobs/:id/select_successful_applicant', to: 'jobs#select_successful_applicant'
+
+  get '/jobs/:job_id/review', to: 'muso_reviews#review_job'
+  post '/jobs/:job_id/review', to: 'muso_reviews#create'
 end
 

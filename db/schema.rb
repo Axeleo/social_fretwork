@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_051707) do
+ActiveRecord::Schema.define(version: 2018_08_15_232351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,7 +72,9 @@ ActiveRecord::Schema.define(version: 2018_08_15_051707) do
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "muso_id"
     t.index ["job_id"], name: "index_muso_reviews_on_job_id"
+    t.index ["muso_id"], name: "index_muso_reviews_on_muso_id"
   end
 
   create_table "musos", force: :cascade do |t|
@@ -120,4 +122,5 @@ ActiveRecord::Schema.define(version: 2018_08_15_051707) do
   add_foreign_key "muso_embeds", "musos"
   add_foreign_key "muso_imgs", "musos"
   add_foreign_key "muso_reviews", "jobs"
+  add_foreign_key "muso_reviews", "musos"
 end
