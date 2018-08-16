@@ -27,7 +27,7 @@
   
   melbourne_suburbs = ["Northcote", 'Preston', 'St Kilda', 'Brunswick', 'Abbostford', 'Coburg', 'Melbounre CBD', 'Thorunbury', 'Richmond', 'Brunswick', 'Collingwood', 'Fairfeild']
 
-  20.times do
+  50.times do
     @muso = Muso.all.sample
     @job = Job.create(
         title: "DJ set @ Somewhere IDK",

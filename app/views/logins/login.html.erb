@@ -1,10 +1,17 @@
-<h1>login</h1>
-<%= form_tag "/login/#{@role}", method: 'post' do %>
-    <label for="">email: </label>
-    <input type="text" name="email">
+<div class="force-height">
+    <div class="login-title">
+        <h1 class="h1-login">login</h1>
+    </div>
 
-    <label for="">password:</label>
-    <input type="password" name="password">
+    <div class="box-container">
+        <%= form_tag "/login/#{@role}", method: 'post' do %>
+            <label class="form-label"for="">email </label>
+            <input class="input-box" type="text" name="email">
 
-    <button>login</button>
-<% end %> 
+            <label class="form-label" for="">password</label>
+            <input class="input-box" type="password" name="password">
+
+            <button class="submit-btn">login</button>
+        <% end %> 
+    </div>
+</div>
