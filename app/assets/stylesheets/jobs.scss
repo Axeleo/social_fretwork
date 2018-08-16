@@ -139,9 +139,39 @@ h5 {
     }
 }
 
+.applied {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    transition: all 2s ease-out;
+    font-size: 1.05em;
+    border:2px solid white;
+    background-color: #249e14;
+    border-radius: 50%; 
+    padding: 0.8em;
+}
 
-
-
-
+.muso-retract-application {
+    text-align: center;
+    transition: all 2s ease-out;
+    width: 20%;
+    margin: 2em auto;
+    padding: 0.5em;
+    font-size:  1.2em;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+     button {
+         margin: 0.5em;
+         font-size: 1.05em;
+         border: 2px solid white;
+         background-color: slategray;
+         padding: 0.4em;
+         border-radius: 50%;
+     }
+     button:hover {
+         background-color: rgba($color: rgb(187, 26, 26), $alpha: 1.0);
+     }
+}
 
 
