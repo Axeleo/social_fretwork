@@ -1,4 +1,4 @@
-// Place all the styles related to the jobs controller here.
+    // Place all the styles related to the jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -14,7 +14,7 @@
 }
 
 article {
-    border-right: 5px solid $color3;
+    border-right: 5px solid #FFE74C;
     margin-bottom: 2em;
     display: flex;
     flex-direction: row;
@@ -51,8 +51,8 @@ article:hover {
 
 .job-budget {
     align-self: flex-end;
-    background-color: $color2;
-    color: black;
+    background-color: rgb(17, 168, 98);
+    color: white;
     padding: 2em 0.2em 0.2em 0.2em;
     position: relative;
     top: -0.8em;
@@ -162,7 +162,6 @@ h5 {
          border: 2px solid white;
          background-color: slategray;
          padding: 0.4em;
-         border-radius: 50%;
      }
      button:hover {
          background-color: rgba($color: rgb(187, 26, 26), $alpha: 1.0);
@@ -205,7 +204,7 @@ h5 {
     flex-direction: column;
     span {
         text-align: center;
-        border-bottom: 1px solid $color3;
+        border-bottom: 1px solid #FFE74C;
         padding-bottom: 1em;
         width: 50%;
         margin: 0 auto;
@@ -213,7 +212,7 @@ h5 {
 }
 
 .muso-app {
-     border-right: 5px solid $color3;
+     border-right: 5px solid #FFE74C;
      display: flex;
      width: 100%;
      align-items: center;
