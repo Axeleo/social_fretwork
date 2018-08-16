@@ -1,7 +1,7 @@
 // Place all the styles related to the musos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import 'main';
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
   
 
@@ -104,7 +104,7 @@ h2 {
 .tile
 {
   width:300px;
-  height:300px;
+  height:200px;
   margin:10px;
   background-color:#99aeff;
   display:inline-block;
