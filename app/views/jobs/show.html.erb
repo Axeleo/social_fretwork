@@ -7,9 +7,11 @@
     <div class="budget">
       <span><%= @job.budget %></span>
     </div>
-  <p>
-    <%= @job.description %>
-  </p>
+    <div class="description">
+      <p>
+        <%= @job.description %>
+      </p>
+    </div>
 
   <% if which_user == current_muso %>
     <%= render "jobs/partials/muso_apply"  %>
@@ -20,7 +22,7 @@
   <% end  %>
 
   <div class="application-count">
-  <p><%= @job.job_applications.count %></p>
+    <p><%= @job.job_applications.count %></p>
   </div>
 
 </div>
