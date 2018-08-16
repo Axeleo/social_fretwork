@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root 'home#index'
   resources :job_applications, only: [:create, :destroy]
   resources :muso_imgs
   resources :muso_embeds

@@ -12,6 +12,7 @@
  *
  *= require reset
  *= require main
+ *= require home
  *= require hosts
  *= require jobs
  *= require musos
