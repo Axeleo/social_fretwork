@@ -2,22 +2,27 @@
     
     <input type="hidden" name="muso_id" value="<%= @muso.id %>">
     <label for="tags">Tags</label>
-    <textarea class="input-box" name="tags"></textarea>
+    <textarea class="tag-input" name="tags"></textarea>
 
 
-    <button class="submit-btn">Save my Tags!</button>
+    <button class="save-tag-btn">Save my Tags!</button>
 <% end %>
 
-<% @muso.tag_list.each do |tag| %>
+<div class="tags-flex">
+    <% @muso.tag_list.each do |tag| %>
 
-    <p>
-        <%= tag %>
-        <%= form_tag "/musos/#{@muso.id}/tags", method: "delete" do %>
-            <input type="hidden" name="tag" value="<%= tag %>">
-            <button class="submit-btn">X</button>
-        <% end %>
-    
-    </p>
+        <span class="tag-btn-edit">
+            <%= tag %>
+            <%#= form_tag "/musos/#{@muso.id}/tags", method: "delete" do %>
+            <%= form_tag "/musos/#{@muso.id}/tags", method: "delete", class: 'form-inline' do %>
+                <input type="hidden" name="tag" value="<%= tag %>">
+                <button class="cross-btn">X</button>
+            <% end %>
+        
+        </span>
 
 
-<% end %>
+    <% end %>
+</div>
+
+

@@ -10,7 +10,11 @@
         
       </div>
       <div class="muso-header-right">
-        <button class="contact-muso-btn">contact</button>
+        <% if current_muso && current_muso.id == session[:muso_id] %>
+          <button class="contact-muso-btn">edit</button>
+        <% else %>
+          <button class="contact-muso-btn">contact</button>
+        <% end %>
       </div>
     </div>
     <div>
