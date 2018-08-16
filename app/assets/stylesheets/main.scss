@@ -18,12 +18,13 @@ body {
     display: flex;
     justify-content: flex-start;
     // background-color: rgba($color: rgb(23, 16, 56), $alpha: 0);
-    padding: 20px;
-    font-size: 1.5em;
+    padding: 10px 20px;
+    font-size: 1.2em;
     // mix-blend-mode: multiply;
     // color: whitesmoke;
     color: #141414;
     background-color: #FFE74C;
+    align-items: center;
     // mix-blend-mode: difference;
 }
 
@@ -39,7 +40,7 @@ li {
 
 .left-nav {
     width: 30%;
-    height: 117px;
+    height: 60px;
     display: flex;
     align-items: center;
 }
@@ -55,7 +56,7 @@ li {
 
 .right-nav {
     width: 30%;
-    height: 117px;
+    height: 60px;
     justify-content: flex-end;
     display: flex;
     align-items: center;
@@ -118,4 +119,10 @@ footer {
 .tag-container {
     margin-top: 30px;
 }
+
+.top-p {
+    margin: 4px 0 10px 0;
+}
+
+
 
