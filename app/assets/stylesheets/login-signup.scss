@@ -2,8 +2,8 @@
 
 .box-container {
     width: 75%;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 30px auto;
+    padding: 40px 20px 60px 20px;
     border: 3px solid white;
     background-color: rgba(35, 35, 58, 0.6);
     color: whitesmoke;
@@ -42,9 +42,16 @@
     height: 80vh;
 }
 
-.submit-btn {
+.submit-btn, .delete-btn {
     border: none;
-    background-color: #30193d;
-    width: 100px;
-    height: 30px;
+    background-color: white;
+    width: 120px;
+    height: 40px;
+    color: $color5;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+.delete-btn {
+    background-color: salmon;
 }
