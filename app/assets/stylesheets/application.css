@@ -12,6 +12,9 @@
  *
  *= require reset
  *= require main
-
+ *= require hosts
+ *= require jobs
+ *= require muso_reviews
+ *= require jquery.rateyo.min.css
  *= require_self
  */

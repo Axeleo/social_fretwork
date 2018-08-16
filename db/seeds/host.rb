@@ -3,27 +3,27 @@
 host_info = [ 
   {
     name: "Davis Long",
-    email: "eqecyxo-7880@yopmail.com",
+    email: "miss_reah@live.com.au",
     password: "pudding"
   },
   {
     name: "Caitlin Sharp",
-    email: "upazeddo-3409@yopmail.com",
+    email: "leah.eramo@gmail.com",
     password: "pudding"
   },
   {
     name: "Gregory Rose",
-    email: "teditobe-5484@yopmail.com",
+    email: "leah_eramo@hotmail.com",
     password: "pudding"
   },
   {
     name: "The Pinnacle",
-    email: "kareweddu-6954@yopmail.com",
+    email: "leah.eramo@rea-group.com",
     password: "pudding"
   },
   {
     name: "Cafe Romantica",
-    email: "emuzattac-0999@yopmail.com",
+    email: "nope-no-trash@outlook.com",
     password: "pudding"
   },
   {

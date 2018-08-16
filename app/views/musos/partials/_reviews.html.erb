@@ -8,19 +8,27 @@
     </div>
 </div>
 
-<div class="review-box">
-    <div class="host-avatar">
-    
-    </div>
-    <div class="review-deets">
-        <div class="review-title">
-            <p>Melinda (host name)<span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+<% @muso.muso_reviews.each do |review| %>
+    <div class="review-box">
+        <div class="host-avatar">
         </div>
-        <div>
-            <p>review content here bla bla bla</p>
-            <small>timestamp</small>
+        <div class="review-deets">
+            <div class="review-title">
+                <div id="rateYo-<%= review.id %>"></div>
+                <p><%= review.job.host.name %></p>
+            </div>
+            <div>
+                <p><%= review.comment %></p>
+                <small><%= review.created_at %></small>
+            </div>
         </div>
     </div>
-</div>
+    <script>
+            $("#rateYo-<%= review.id %>").rateYo({
+                rating: <%= review.rating %>,
+                readOnly: true
+            });
+    </script>
+<% end %>
 
 <%# Need to add a button to leave review if muso has completed a job / event for the host %>
