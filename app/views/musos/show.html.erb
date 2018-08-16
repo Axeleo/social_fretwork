@@ -18,14 +18,23 @@
       <p><%= @muso.bio %></p>
     </div>
 
+    <div>
+      <% @muso.tag_list.each do |tag| %>
+        <span><%= tag %></span>
 
-    <div class="muso-gallery">
-      <div class="arrow-left">
-        <div class="fas fa-angle-left"></div>
+      <% end %>
+    </div>
+
+  <div class="embed-container">
+    <% if muso.url.include? 'youtube' %>
+      <iframe class="youtube-embed" width="100%" height="315" src="<%= muso.url.sub('watch?v=', 'embed/') %>?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <% else %>
+      <div class="soundcloud-embed">
+        <%= muso.url.sub('<iframe width="100%" height="300"', '<iframe width="50%" height="80"').html_safe %>
       </div>
       <div>
         <%= render "musos/partials/gallery" %>
-        <img src="http://via.placeholder.com/560x315" alt="">
+      
       </div>
       <div class="arrow-right">
         <div class="fas fa-angle-right"></div>
@@ -33,8 +42,7 @@
     </div>
 
     <div class="muso-embed">
-      <img src="http://via.placeholder.com/560x40" alt="">
-      <img src="http://via.placeholder.com/560x40" alt="">
+      
       <% @muso_embed.each do |muso| %>
         <div class="embed-container">
           <% if muso.url.include? 'youtube' %>
