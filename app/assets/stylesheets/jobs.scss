@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
+
+.job-listing-text {
     font-size: 2.5em;
     margin: 50px;
 }
@@ -10,10 +11,6 @@ h1 {
 .all-job-listings {
     margin: 0 auto;
     width: 80%;
-}
-
-body {
-    color: white;
 }
 
 article {
