@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+FileUtils.rm_rf(Dir.glob(File.join(Rails.root, "/public/uploads/")))
 MusoImg.destroy_all
 MusoReview.destroy_all
 Job.all.each do |j| j.update_attribute(:job_application, nil); end
