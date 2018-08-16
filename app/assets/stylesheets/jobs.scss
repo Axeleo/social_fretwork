@@ -211,25 +211,35 @@ h5 {
 
 .muso-app {
      border-right: 5px solid $color3;
-     display: flex
+     display: flex;
+     width: 100%;
+     align-items: center;
+     justify-content: space-between;
+     padding: 1em;
+     img {
+         width: 8em;
+         height: 100%;
+     }
 }
 
 .muso-application-buttons {
-    align-self: flex-end;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 .confirm {
-    height: 100%;
-    padding: 1em;
+    height: 5em;
+    width: 5em;
     background-color: #249e14;
     transition: all 1s ease-in;
 }
 
 .reject {
-    height: 100%;
-    padding: 1em;
+    width: 5em;
+    height: 5em;
     background-color: #d34238;
-    transition: all 1s ease-in;
+    transition: all 0.4s ease-in;
 }
 
 .confirm:hover {
