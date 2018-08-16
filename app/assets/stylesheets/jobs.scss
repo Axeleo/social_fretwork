@@ -10,7 +10,6 @@ h1 {
 }
 
 .all-job-listings {
-    display: flex-box;
     margin: 0 auto;
     width: 80%;
 }
@@ -68,6 +67,10 @@ article:hover {
 .job-listing-full {
     width: 80%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: $color1;
+    position: relative;
 }
 
 h3 {
@@ -77,6 +80,32 @@ h3 {
     color: black;
     background-color: white;
 }
+
+.job-show-right {
+    align-self: flex-end;
+    position: absolute;
+    top: 0;
+    right: 1.5em;
+}
+
+.budget {
+    padding: 1em 0.5em 0.5em 0.5em;
+    background-color: $color2;
+    align-self: flex-end;
+}
+.application-count {
+    padding: 0.5em;
+    border-bottom: 1px solid $color2;
+    align-self: flex-end;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
 
 
 

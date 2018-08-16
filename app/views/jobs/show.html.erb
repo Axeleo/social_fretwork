@@ -1,13 +1,20 @@
 <div class="job-listing-full">
   <h3><%= @job.title %></h3>
   <div class="job-info">
-    <span><%= @job.location %></span>
-    <span><%= @job.date_time %></span>
+    <span><i class="fas fa-map-marker-alt"></i><%= @job.location %></span>
+    <br>
+    <span><i class="far fa-calendar-alt"></i><%= @job.date_time.to_formatted_s(:short) %></span>
   </div>
+  <div class="job-show-right">
     <div class="budget">
-      <span><%= @job.budget %></span>
+      <span>$ <%= @job.budget %></span>
     </div>
+    <div class="application-count">
+      <p><%= @job.job_applications.count %></p>
+    </div>
+  </div>
     <div class="description">
+      <h5>Details</h5>
       <p>
         <%= @job.description %>
       </p>
@@ -21,9 +28,6 @@
     <%= render "jobs/partials/host_view_applications" %>
   <% end  %>
 
-  <div class="application-count">
-    <p><%= @job.job_applications.count %></p>
-  </div>
 
 </div>
 
