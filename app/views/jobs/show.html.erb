@@ -1,27 +1,41 @@
-<div class="job-listing-full">
-  <h3><%= @job.title %></h3>
-  <div class="job-info">
-    <span><%= @job.date_time %></span>
-    <span><%= @job.location %></span>
-    <span><%= @job.filled %></span>
-    <span><%= @job.complete %></span>
-    <span><%= @job.budget %></span>
-  </div>
-  <p>
-    <%= @job.description %>
-  </p>
+<div class="force--height">
 
-  <% if which_user == current_muso %>
-    <%= render "jobs/partials/muso_apply"  %>
-    <%= render "jobs/partials/muso_application" %>
-  <% else  %>
-    <%= render "jobs/partials/mark_complete" %>
-    <%= render "jobs/partials/host_view_applications" %>
-  <% end  %>
+  <div class="job-listing-full">
+    <h3><%= @job.title %></h3>
+    <div class="job-info">
+      <div class="job-location"> 
+        <span><i class="fas fa-map-marker-alt"></i> <%= @job.location %></span>
+      </div>
+      <div class="job-datetime">
+        <span><i class="far fa-calendar-alt"></i> <%= @job.date_time.to_formatted_s(:short) %></span>
+      </div>
+    </div>
+    <div class="job-show-right">
+      <div class="budget">
+        <span>$ <%= @job.budget %></span>
+      </div>
+      <div class="application-count">
+        <p><%= @job.job_applications.count %></p>
+        <br>
+        <p>Applied</p>
+      </div>
+    </div>
+      <div class="description">
+        <h5>Details</h5>
+        <p>
+          <%= @job.description %>
+        </p>
+      </div>
 
-  <div class="application-count">
-  <p><%= @job.job_applications.count %></p>
+    <% if which_user == current_muso %>
+      <%= render "jobs/partials/muso_apply"  %>
+      <%= render "jobs/partials/muso_application" %>
+    <% elsif which_user == @job.host %>
+      <%= render "jobs/partials/mark_complete" %>
+      <%= render "jobs/partials/host_view_applications" %>
+    <% end  %>
+
   </div>
+
 
 </div>
-
