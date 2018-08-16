@@ -1,4 +1,4 @@
-if Rails.env.production?
+
   CarrierWave.configure do |config|
     config.fog_provider = 'fog/aws' 
     config.fog_credentials = {
@@ -9,4 +9,3 @@ if Rails.env.production?
     }
     config.fog_directory  = "social-fretwork"
   end
-end
