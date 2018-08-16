@@ -1,16 +1,14 @@
 class MusoReviewsController < ApplicationController
-    def show
-        @reviews = MusoReview.all
-    end
     
     def review_job
-        redirect_to jobs_path and return unless my_job_app?(job_app)
         @job = Job.find(params[:job_id])
+        redirect_to jobs_path and return unless my_job_app?(@job)
         @review = MusoReview.new
     end
 
     def create
         @job = Job.find(params[:job_id])
+        redirect_to jobs_path and return unless my_job?(@job)
         @review = MusoReview.new(
             job: @job,
             rating: params[:rating],

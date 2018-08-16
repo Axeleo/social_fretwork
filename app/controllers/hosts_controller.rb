@@ -4,11 +4,11 @@ class HostsController < ApplicationController
     end
 
     def create
-        redirect '/musos' if logged_in?
+        redirect '/musos' and return if logged_in?
         @host = Host.new(host_create_params)
         if @host.save
             session[:host_id] = @host.id
-            redirect_to hosts_path
+            redirect_to musos_path
         else
             render :new
         end

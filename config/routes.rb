@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :muso_embeds
   resources :musos
   resources :jobs
-  resources :hosts
+  resources :hosts, except: [:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get '/login', to: 'logins#muso_or_host_login'

@@ -9,6 +9,7 @@ class JobsController < ApplicationController
   end
 
   def create
+    redirect_to musos_path and return unless !!current_host
     @job = Job.new(job_create_params)
     if @job.save
       redirect_to '/jobs'
@@ -18,12 +19,13 @@ class JobsController < ApplicationController
   end
 
   def edit
+    redirect_to musos_path and return unless !!current_host
     @job = Job.find(params[:id])
   end
 
   def update
     @job = Job.find(params[:id])''
-    redirect_to job_path(job.id) and return if my_job?(@job)
+    redirect_to job_path(job.id) and return unless my_job?(@job)
     if @job.update_attributes(job_edit_params)
       redirect_to '/jobs'
     else
@@ -43,7 +45,7 @@ class JobsController < ApplicationController
 
   def select_successful_applicant
     job = Job.find(params[:id])
-    redirect_to job_path(job.id) and return unless !job.filled && my_job?(@job)
+    redirect_to job_path(job.id) and return unless job.filled && my_job?(@job)
     job.job_application = JobApplication.find(params[:job_application_id])
     job.filled = true
     if job.save

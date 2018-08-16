@@ -34,21 +34,8 @@ class JobApplicationsController < ApplicationController
     job_app = JobApplication.find(params[:job_application_id])
     redirect_to jobs_path and return unless my_job?(job_app.job)
     job_app.rejected = true
-    if job_app.save
-      redirect_to "/jobs/#{params[:id]}"
-    else
-      redirect_to "/jobs/#{params[:id]}"
-    end
-  end
-
-  private
-  def preset_params
-    {
-      # not sure about this
-      host_id: Host.find(params[:host_id]),
-      muso_id: current_muso.id,
-      rejected: false 
-    }
+    job_app.save
+    redirect_to job_path(job_app.job.id)
   end
 
 end
