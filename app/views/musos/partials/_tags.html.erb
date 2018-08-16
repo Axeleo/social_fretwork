@@ -10,6 +10,14 @@
 
 <% @muso.tag_list.each do |tag| %>
 
-    <p><%= tag %></p>
+    <p>
+        <%= tag %>
+        <%= form_tag "/musos/#{@muso.id}/tags", method: "delete" do %>
+            <input type="hidden" name="tag" value="<%= tag %>">
+            <button>X</button>
+        <% end %>
+    
+    </p>
+
 
 <% end %>

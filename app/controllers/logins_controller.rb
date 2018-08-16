@@ -24,6 +24,7 @@ class LoginsController < ApplicationController
             session[:muso_id] = muso.id 
             redirect_to '/jobs'
         else
+            @role = 'musos'
             render :login
         end
     end
@@ -34,6 +35,7 @@ class LoginsController < ApplicationController
             session[:host_id] = host.id 
             redirect_to '/musos'
         else
+            @role = 'hosts'
             render :login
         end
     end

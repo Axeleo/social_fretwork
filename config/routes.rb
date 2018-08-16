@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :job_applications, only: [:create, :delete]
+  resources :job_applications, only: [:create, :destroy]
   resources :muso_imgs
   resources :muso_embeds
   resources :muso_reviews
@@ -7,23 +7,27 @@ Rails.application.routes.draw do
   resources :jobs
   resources :hosts
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/login/musos', to: 'logins#musos'
-  get '/login/hosts', to: 'logins#hosts'
+
   get '/login', to: 'logins#muso_or_host_login'
+
+  get '/login/musos', to: 'logins#musos'
+  post '/login/musos', to: 'logins#muso_session'
+
+  get '/login/hosts', to: 'logins#hosts'
+  post '/login/hosts', to: 'logins#host_session'
+
   delete '/session', to: 'logins#delete_session'
 
-  post '/login/musos', to: 'logins#muso_session'
-  post '/login/hosts', to: 'logins#host_session'
-  post "/musos/:id/tags", to: 'musos#create_tags'
-
+  get "/search/musos", to: 'search#muso_results'
+  get "/browse/musos", to: 'search#browse_all_musos'
   get '/signup', to: 'logins#muso_or_host_signup'
-  get '/musos/new', to: 'musos#new'
-  get '/hosts/new', to: 'hosts#new'
-  get '/hosts', to: 'hosts#index'
-  post '/hosts', to: 'hosts#create'
-  post '/musos', to: 'musos#create'
-
   
+  post "/musos/:id/tags", to: 'musos#create_tags'
+  delete "/musos/:id/tags", to: 'musos#destroy_tags'
 
+  put '/job_applications/:id/reject', to: 'job_applications#reject'
+  put 'jobs/:id/completed', to: 'jobs#mark_job_completed'
+
+  put 'jobs/:id/select_successful_applicant', to: 'jobs#select_successful_applicant'
 end
 

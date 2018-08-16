@@ -14,9 +14,12 @@ class MusosController < ApplicationController
     end
     
     def create
+        redirect '/jobs' if logged_in?
         @muso = Muso.new(muso_create_params)
+        
         if @muso.save
-            redirect_to musos_path
+            session[:muso_id] = @muso.id
+            redirect_to '/jobs'
         else
             render :new
         end
@@ -49,6 +52,13 @@ class MusosController < ApplicationController
     def create_tags
         @muso = Muso.find(params[:muso_id])
         @muso.tag_list.add params[:tags].split(',')
+        @muso.save
+        redirect_to edit_muso_path(@muso.id)
+    end
+
+    def destroy_tags
+        @muso = Muso.find(params[:id])
+        @muso.tag_list.remove params[:tag]
         @muso.save
         redirect_to edit_muso_path(@muso.id)
     end

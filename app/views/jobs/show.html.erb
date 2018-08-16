@@ -11,6 +11,17 @@
     <%= @job.description %>
   </p>
 
-  <%# if user is a host add section to select from drop down %>
+  <% if which_user == current_muso %>
+    <%= render "jobs/partials/muso_apply"  %>
+    <%= render "jobs/partials/muso_application" %>
+  <% else  %>
+    <%= render "jobs/partials/mark_complete" %>
+    <%= render "jobs/partials/host_view_applications" %>
+  <% end  %>
+
+  <div class="application-count">
+  <p><%= @job.job_applications.count %></p>
+  </div>
+
 </div>
 
