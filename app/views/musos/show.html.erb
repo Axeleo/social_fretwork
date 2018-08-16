@@ -18,6 +18,12 @@
       <p><%= @muso.bio %></p>
     </div>
 
+    <div>
+      <% @muso.tag_list.each do |tag| %>
+        <span><%= tag %></span>
+
+      <% end %>
+    </div>
 
   <div class="embed-container">
     <% if muso.url.include? 'youtube' %>
@@ -28,7 +34,7 @@
       </div>
       <div>
         <%= render "musos/partials/gallery" %>
-        <img src="http://via.placeholder.com/560x315" alt="">
+      
       </div>
       <div class="arrow-right">
         <div class="fas fa-angle-right"></div>
@@ -36,8 +42,7 @@
     </div>
 
     <div class="muso-embed">
-      <img src="http://via.placeholder.com/560x40" alt="">
-      <img src="http://via.placeholder.com/560x40" alt="">
+      
       <% @muso_embed.each do |muso| %>
         <div class="embed-container">
           <% if muso.url.include? 'youtube' %>
