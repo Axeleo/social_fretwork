@@ -57,6 +57,11 @@ h2 {
     width: 120px;
     height: 40px;
     font-size: 1em;
+    cursor: pointer;
+}
+
+.contact-muso-btn:hover {
+    background-color: #1E91D6;
 }
 
 .muso-embed {
