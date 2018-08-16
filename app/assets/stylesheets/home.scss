@@ -1,7 +1,10 @@
-body {
-  background-image: url(/uploads/muso/backgrounds/micphotot.jpeg)
+.home {
+  background-image: url(/uploads/muso/backgrounds/micphotot.jpeg);
   // only apply the style on a specific page
   // add class to be specific and add in on the erb. 
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 img {
@@ -15,6 +18,10 @@ img {
 
 .gallery {
   background: rgba(238, 238, 238, 0);
+}
+
+.h1-home {
+  font-size: 3em;
 }
 
 h2 {
@@ -31,5 +38,14 @@ h2 {
   display: flex;
   width: 20em;
   height: 40em;
+}
+
+.searchform-container {
+  display: flex;
+  justify-content: center;
+} 
+
+.search-bar {
+  height: 4em;
 }
 
