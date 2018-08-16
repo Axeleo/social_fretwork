@@ -15,5 +15,9 @@ class Muso < ApplicationRecord
     include PgSearch
     pg_search_scope :search_by_name, :against => [:name]
     pg_search_scope :search_by_location, :against => [:location]
+
+    def average_rating
+        avg(muso_reviews.rating)
+    end
     
 end
