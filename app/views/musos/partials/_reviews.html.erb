@@ -1,6 +1,6 @@
 <div class="review-header">
     <div>
-        <p>2 Reviews <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+        <p><%= @muso.muso_reviews.count %> Reviews <div id="rateYo-average"></div></p>
 
     </div>
     <div>
@@ -19,7 +19,7 @@
             </div>
             <div>
                 <p><%= review.comment %></p>
-                <small><%= review.created_at %></small>
+                <small><%= clean_date_time(review.created_at) %></small>
             </div>
         </div>
     </div>
@@ -30,5 +30,9 @@
             });
     </script>
 <% end %>
-
-<%# Need to add a button to leave review if muso has completed a job / event for the host %>
+    <script>
+            $("#rateYo-average").rateYo({
+                rating: <%= @muso.average_rating %>,
+                readOnly: true
+            });
+    </script>
