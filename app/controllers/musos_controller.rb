@@ -10,16 +10,17 @@ class MusosController < ApplicationController
     end
 
     def new
+        redirect musos_path if logged_in?
         @muso = Muso.new
     end
     
     def create
-        redirect '/jobs' if logged_in?
+        redirect musos_path if logged_in?
         @muso = Muso.new(muso_create_params)
         
         if @muso.save
             session[:muso_id] = @muso.id
-            redirect_to '/jobs'
+            redirect_to jobs_path
         else
             render :new
         end
@@ -27,11 +28,13 @@ class MusosController < ApplicationController
 
     def edit
         @muso = Muso.find(params[:id])
+        redirect_to musos_path and return unless current_muso == @muso
         @images = MusoImg.where(muso: @muso)
     end
 
     def update
         muso = Muso.find(params[:id])
+        redirect_to musos_path and return unless current_muso == muso
         muso.avatar = params[:file]
         if muso.save
             if muso.update_attributes(muso_edit_params)
@@ -44,13 +47,9 @@ class MusosController < ApplicationController
         end
     end
 
-    def destroy
-        ##session destroy
-        ##muso destory 
-    end
-
     def create_tags
         @muso = Muso.find(params[:muso_id])
+        redirect_to musos_path and return unless current_muso == @muso
         @muso.tag_list.add params[:tags].split(',')
         @muso.save
         redirect_to edit_muso_path(@muso.id)
@@ -58,6 +57,7 @@ class MusosController < ApplicationController
 
     def destroy_tags
         @muso = Muso.find(params[:id])
+        redirect_to musos_path and return unless current_muso == @muso
         @muso.tag_list.remove params[:tag]
         @muso.save
         redirect_to edit_muso_path(@muso.id)

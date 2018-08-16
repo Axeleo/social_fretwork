@@ -5,13 +5,16 @@ class MusoEmbedsController < ApplicationController
   end
 
   def edit
+    redirect_to musos_path and return unless !!current_muso
     @muso_embed = MusoEmbed.find(params[:id])
   end
 
   def create
-    @muso_embed = MusoEmbed.new
-    @muso_embed.url = params[:muso_embeds][:url]
-    @muso_embed.muso_id = current_muso.id
+    redirect_to musos_path and return unless !!current_muso
+    @muso_embed = MusoEmbed.new(
+      url: params[:url],
+      muso: muso
+    )
     if @muso_embed.save
       redirect_to edit_muso_path(current_muso.id)
     else
@@ -20,11 +23,12 @@ class MusoEmbedsController < ApplicationController
   end
 
   def update
+    redirect_to musos_path and return unless !!current_muso
     @muso_embed = MusoEmbed.find(params[:id])
     @muso_embed.url = params[:url]
     
     if @muso_embed.save
-      redirect_to muso_embed_path(@muso_id)
+      redirect_to edit_muso_path(@muso_id)
     else
       render "musos/edit"
     end   

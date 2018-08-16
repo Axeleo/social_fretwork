@@ -1,11 +1,8 @@
 <h1>Job listings</h1>
-<%# <div class="sort">
-  <ul>
-    <li><a href='#'>All</a></li>
-    <li><a href='#'>Applied</a></li>
-    <li><a href='#'>Accepted</a></li>
-  </ul>
-</div> %>
+
+<div class="sort">
+  <%= render "jobs/partials/host_filters" if !!current_host %>
+</div>
 
 <%# Search partial should be rendered here %>
 <div class="all-job-listings">
@@ -27,6 +24,4 @@
 </div>
 
 <script>
-
-
 </script>
