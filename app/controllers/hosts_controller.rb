@@ -3,6 +3,8 @@ class HostsController < ApplicationController
         @host = Host.new
     end
 
+    
+
     def create
         redirect '/musos' if logged_in?
         @host = Host.new(host_create_params)

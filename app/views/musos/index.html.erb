@@ -1,17 +1,23 @@
-<h2>Our Musos</h2>
-<table>
-    <thead>
-        <tr>
-            <td>Name</td>
-            <td>location</td>
-            <td colspan="1"></td>
-        </tr>
-    </thead>
-    <% @musos.each do |muso| %>
-        <tr>
-            <td><%= muso.name %></td>
-            <td><%= muso.location %></td>
-            <td><%= link_to "show" , muso_path(muso.id) %></td>
-        </tr>
-    <% end %>
-</table>
+
+<div class="musos-list">
+        <div class="page-title-container">
+            <div class="filler1"><h1 class="h1-muso">Our Musos</h1></div>
+            <div class="filler"></div>
+            <div class="filler"></div>
+        </div>
+
+    <div class="wrap">
+
+        <% @musos.each do |muso| %>
+            <div class="tile" style="background-image: url(<%= muso.avatar.url(:view) %>);">
+                <div class="text">
+                    <h2><%= muso.name %></h2>
+                    <p><%= muso.location %></p>
+                    <p><%= link_to "show" , muso_path(muso.id) %></p>
+                </div>
+            </div>
+        <% end %>
+
+
+    </div>
+</div>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 
 $color1: #6C6C8B;
 $color2: #A9799C;
@@ -9,6 +10,86 @@ $color5: #3C2D84;
 $body-font: 'Raleway', sans-serif;
 
 body {
-    background-color: $color1;
+    background:  linear-gradient(
+        rgba(14, 0, 0, 0.7), 
+        rgba(22, 17, 54, 0.6)
+      ), url('https://images.unsplash.com/photo-1533134622340-75ef27ed6c88?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3cc69679442f71054935ae102972b10f&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    border-image-repeat: stretch;
     font-family: $body-font;
+    display: flex;
+    flex-direction: column;
+    color: white;
 }
+
+.content {
+    flex: 1 0 auto;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgba($color: rgb(23, 16, 56), $alpha: 0);
+    padding: 20px;
+    font-size: 1.5em;
+    mix-blend-mode: multiply;
+    color: whitesmoke;
+    
+}
+
+
+.left-nav {
+    width: 30%;
+    height: 117px;
+    display: flex;
+    align-items: center;
+}
+
+.home-nav {
+    width: 30%;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    text-align: center;
+}
+
+.right-nav {
+    width: 30%;
+    height: 117px;
+    text-align: right;
+    li {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+
+
+.user-stuff {
+    display: inline-block;
+    text-align: center;
+}
+
+footer {
+    flex-shrink: 0;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba($color: rgb(23, 16, 56), $alpha: 0);
+    mix-blend-mode: multiply;
+    color: whitesmoke;
+}
+
+// buttonsssss
+.logout-btn, .login-btn, .signup-btn {
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0);
+    width: 100px;
+    height: 30px;
+}
+
+.logout-btn:hover, .login-btn:hover, .signup-btn:hover {
+    background-color:  rgba(255, 255, 255, .5);
+}
+
+

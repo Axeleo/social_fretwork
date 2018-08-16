@@ -1,25 +1,30 @@
-<h2>Sign up to be a muso</h2>
+<div class="force-height">
+    <div class="login-title">
+        <h2>Sign up to be a Muso</h2>
+    </div>
+    <div class="box-container">
+        <% @muso.errors.full_messages.each do |msg| %>
+            <p><%= msg %></p>
+        <% end %>
 
-<% @muso.errors.full_messages.each do |msg| %>
-    <p><%= msg %></p>
-<% end %>
+        <%= form_tag "/musos", method: "post" do %>
 
-<%= form_tag "/musos", method: "post" do %>
+            <label for="muso[name]">name</label>
+            <input class="input-box" type="text" name="muso[name]">
 
-    <label for="muso[name]">Name</label>
-    <input type="text" name="muso[name]">
+            <label for="muso[email]">email</label>
+            <input class="input-box" type="email" name="muso[email]">
 
-    <label for="muso[email]">Email</label>
-    <input type="email" name="muso[email]">
+            <label for="muso[password]">password</label>
+            <input class="input-box" type="password" name="muso[password]" >
 
-    <label for="muso[password]">Password</label>
-    <input type="password" name="muso[password]" >
+            <label for="muso[bio]">bio</label>
+            <textarea class="input-box" name="muso[bio]"></textarea>
 
-    <label for="muso[bio]">Bio</label>
-    <textarea name="muso[bio]"></textarea>
+            <label for="muso[location]">location</label>
+            <input class="input-box" type="text" name="muso[location]">
 
-    <label for="muso[location]">Location</label>
-    <input type="text" name="muso[location]">
-
-    <button>Join up!</button>
-<% end %>
+            <button class="submit-btn">Join up!</button>
+        <% end %>
+    </div>
+</div>
