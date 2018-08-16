@@ -9,7 +9,7 @@
     <div class="wrap">
 
         <% @musos.each do |muso| %>
-            <div class="tile">
+            <div class="tile" style="background-image: url(<%= muso.avatar.url(:view) %>);">
                 <div class="text">
                     <h2><%= muso.name %></h2>
                     <p><%= muso.location %></p>
