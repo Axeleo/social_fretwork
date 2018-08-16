@@ -1,4 +1,5 @@
   <div class="current-applications">
+  
   <% @job.job_applications.all_not_rejected.each do |job_app|%>
     <% if current_host == @job.host %>
     
