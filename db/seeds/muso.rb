@@ -106,6 +106,7 @@ musos_info.each do |muso|
     m.tag_list.add tag_options.sample(10)
     image_src = File.join(Rails.root, "/stock_images/img_#{rand(39)}.jpg")
     src_file = File.new(image_src)
+   
     m.avatar = src_file
     m.save
     

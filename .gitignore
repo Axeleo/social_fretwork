@@ -12,7 +12,6 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-public/uploads/*
 
 # Ignore uploaded files in development
 /storage/*
@@ -23,6 +22,9 @@ public/uploads/*
 
 /public/assets
 .byebug_history
+
+public/uploads/*
+stock_images/*
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
