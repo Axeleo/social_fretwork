@@ -17,9 +17,9 @@
       <p><%= @muso.bio %></p>
     </div>
 
-    <div>
+    <div class="tag-container">
       <% @muso.tag_list.each do |tag| %>
-        <span><%= tag %></span>
+        <span class="tag-btn"><%= tag %></span>
 
       <% end %>
     </div>
