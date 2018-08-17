@@ -1,10 +1,9 @@
 
 
-
-
-
 .logo {
   position: relative;
+  top: -40px;
+  left: -60px;
   background-color: white;
   height: 140%;
   color: black;
@@ -17,7 +16,7 @@
   position: absolute;
   border: 2px solid black;
   text-align: center;
-  padding: 3px 3px 3px 10px;
+  padding: 3px 5px 3px 10px;
 }
 
 .lower-fret {
@@ -37,7 +36,7 @@
   border: 2px solid black;
   border-bottom: 2px solid black;
   width: 10px;
-  height: 35px;
+  height: 32px;
 }
 .upper-fret-detail {
   position: absolute;
@@ -45,7 +44,7 @@
   right: -10px;
   border: 2px solid black;
   width: 10px;
-  height: 35px;
+  height: 32px;
 }
 
 // .logo {
