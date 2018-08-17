@@ -259,6 +259,7 @@ h2 {
     color: whitesmoke;
     font-size: 1em;
     vertical-align: top;
+    margin-top: 15px;
 }
 
 .change-avatar {
@@ -267,4 +268,29 @@ h2 {
 
 .label-chg {
     display: block;
+}
+
+.li-inline {
+    display: inline;
+}
+
+#info, #tags, #embed {
+    // width: 150px;
+    // height: 45px;
+    display: inline-block;
+    // background-color: #F8FFE5;
+    // vertical-align: middle;
+    // color: #141414;
+    padding: 10px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+#info:hover, #tags:hover, #embed:hover {
+    background-color: #0072BB;
+    transition: all 0.3s linear;
+}
+
+.highlight-this {
+
 }

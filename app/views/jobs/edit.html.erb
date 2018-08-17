@@ -1,5 +1,5 @@
 <div class="box-container">
-  <%= form_tag "/jobs/#{@job.id}", method: 'put' do %>
+  <%= form_tag "/jobs/#{@job.id}", method: "put" do %>
     <span>Title</span>
     <input class="input-box" type="text" name="job[title]" value="<%= @job.title%>">
     <span>Duration</span>
@@ -17,7 +17,7 @@
     <button class="submit-btn">Update</button>
   <% end %>
 
-  <%= form_tag "/jobs/#{@job.id}", method: 'delete' do%>
+  <%= form_tag "/jobs/#{@job.id}", method: "delete" do%>
     <button class="delete-btn">Delete</button>
   <% end %>
 </div>

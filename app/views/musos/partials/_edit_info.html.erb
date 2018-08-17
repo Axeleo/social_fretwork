@@ -2,7 +2,7 @@
     <%= form_tag "/musos/#{@muso.id}", method: "patch", :enctype =>"multipart/form-data" do %>
         <div class="change-avatar">
             <%= image_tag(@muso.avatar.thumb.url, :class => "img_edit") if @muso.avatar.present? %>
-            <label for="muso[avatar]">Change Avatar</label>
+            <label class="label-chg" for="muso[avatar]">Change Avatar</label>
             <%= file_field_tag "muso[avatar]", :class => "upload-btn" %>
         </div>
         <label for="">Band / artist name</label>

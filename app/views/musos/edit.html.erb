@@ -4,9 +4,11 @@
     <div class="box-container">
         <div class="edit-nav">
             <ul>
-                <li id="info">edit info</li>
-                <li id="tags">edit tags</li>
-                <li id="embed">edit multimedia</li>
+                <li id="info">info</li>
+                <li class="li-inline"> / </li>
+                <li id="tags">tags</li>
+                <li class="li-inline"> / </li>
+                <li id="embed">multimedia</li>
             </ul>
         </div>
         
@@ -23,28 +25,25 @@
     var renderTarget = document.querySelector('#render-target')
     
     document.querySelector('#info').addEventListener('click', function(event){
-        renderTarget.innerHTML = "<%= render "musos/partials/edit_info" %>"
+        
+        renderTarget.innerHTML = `<%= render "musos/partials/edit_info" %>`
+        // event.target.classList.add('highlight-this')
     })
 
     document.querySelector('#tags').addEventListener('click', function(event){
-        renderTarget.innerHTML = "<%= render "musos/partials/tags" %>"
+        
+        renderTarget.innerHTML = `<%= render "musos/partials/tags" %>`
+        // event.target.classList.add('highlight-this')
     })
 
     document.querySelector('#embed').addEventListener('click', function(event){
-        renderTarget.innerHTML = "<%= render "musos/partials/add_embed" %>"
+        
+        renderTarget.innerHTML = `<%= render "musos/partials/add_embed" %>`
+        // event.target.classList.add('highlight-this')
     })
     
 
 </script>
 
 
-<%= render "musos/partials/tags" %>
-<%= render "musos/partials/add_embed" %>
 
-
-
-
-
-
-
-    
