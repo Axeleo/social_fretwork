@@ -1,12 +1,21 @@
 .home {
   background-image: url('/micphotot.jpeg');
+  
   // only apply the style on a specific page
   // add class to be specific and add in on the erb. 
   background-position: 50% 50%;
   background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: column;
+}
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 img {
@@ -29,7 +38,7 @@ img {
 
 .h2-home {
   margin-left: 1em;
-  margin-top: 9em;
+  // margin-top: 9em;
 }
 
 .h2-tile {
