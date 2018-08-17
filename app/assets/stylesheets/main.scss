@@ -70,14 +70,23 @@ li {
     text-align: center;
 }
 
-footer {
-    flex-shrink: 0;
-    padding: 10px;
-    text-align: center;
-    background-color: rgba($color: rgb(23, 16, 56), $alpha: 0);
-    mix-blend-mode: multiply;
-    color: whitesmoke;
-}
+// footer {
+//     flex-shrink: 0;
+//     padding: 10px;
+//     text-align: center;
+//     background-color: rgba($color: rgb(23, 16, 56), $alpha: 0);
+//     mix-blend-mode: multiply;
+//     color: whitesmoke;
+// }
+
+.footer-main {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #141414;
+    background-color: rgb(255, 231, 76);
+    height: 2em;
+    margin-top: 1em;
+    }
 
 // buttonsssss
 .logout-btn, .login-btn, .signup-btn {
