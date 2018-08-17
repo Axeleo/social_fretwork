@@ -15,4 +15,8 @@ class Job < ApplicationRecord
   def self.non_completed
     where(complete: false)
   end
+
+  def muso
+    !!job_application ? job_application.muso : false
+  end
 end

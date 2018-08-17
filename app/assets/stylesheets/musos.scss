@@ -215,6 +215,7 @@ h2 {
     background-color: #F8FFE5;
 }
 
+
 .bio-box {
     width: 300px;
     height: 100px;
@@ -294,4 +295,21 @@ h2 {
 .highlight-this {
     background-color: #0072BB;
     transition: all 0.3s linear;
+}
+
+.muso-media-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-container {
+    height: 80%;
+    width: 80%;
+}
+
+
+iframe {
+    width: 58vw;
+    height: 40vh;
 }
