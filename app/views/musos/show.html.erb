@@ -11,7 +11,7 @@
       </div>
       <div class="muso-header-right">
         <% if current_muso && current_muso.id == session[:muso_id] %>
-          <button class="contact-muso-btn">edit</button>
+          <a href="/musos/<%= current_muso.id%>/edit"><button class="contact-muso-btn">edit</button></a>
         <% else %>
           <button class="contact-muso-btn">contact</button>
         <% end %>

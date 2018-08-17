@@ -1,19 +1,22 @@
-<%= form_tag "/musos/#{@muso.id}", method: "patch", :enctype =>"multipart/form-data" do %>
-    
-    <%= image_tag(@muso.avatar.thumb.url) if @muso.avatar.present? %>
-    <label for="muso[avatar]">Change Avatar</label>
-    <%= file_field_tag "muso[avatar]" %>
-    
-    <input type="text" name="muso[name]" value="<%= @muso.name %>">
+<div class="left-this">
+    <%= form_tag "/musos/#{@muso.id}", method: "patch", :enctype =>"multipart/form-data" do %>
+        <div class="change-avatar">
+            <%= image_tag(@muso.avatar.thumb.url, :class => "img_edit") if @muso.avatar.present? %>
+            <label class="label-chg" for="muso[avatar]">Change Avatar</label>
+            <%= file_field_tag "muso[avatar]", :class => "upload-btn" %>
+        </div>
+        <label for="">Band / artist name</label>
+        <input class="input-left" type="text" name="muso[name]" value="<%= @muso.name %>">
 
-    <label for="muso[email]">Email</label>
-    <input type="email" name="muso[email]" value="<%= @muso.email %>">
+        <label for="muso[email]">Email</label>
+        <input class="input-left" type="email" name="muso[email]" value="<%= @muso.email %>">
 
-    <label for="muso[bio]">Bio</label>
-    <textarea name="muso[bio]"><%= @muso.bio %></textarea>
+        <label for="muso[bio]">Bio</label>
+        <textarea class="bio-box" name="muso[bio]"><%= @muso.bio %></textarea>
 
-    <label for="muso[location]">Location</label>
-    <input type="text" name="muso[location]" value="<%= @muso.location %>">
+        <label for="muso[location]">Location</label>
+        <input class="input-left" type="text" name="muso[location]" value="<%= @muso.location %>">
 
-    <button>Save my info!</button>
-<% end %>
+        <button class="submit-btn">Save my info!</button>
+    <% end %>
+</div>

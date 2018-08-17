@@ -1,12 +1,61 @@
-<h1>Edit your tags and multimedia</h1>
+<h1>Edit profile</h1>
 
 <div class="force-height">
     <div class="box-container">
-
-        <%= render "musos/partials/edit_info" %>
-
-        <%= render "musos/partials/tags" %>
-
-        <%= render "musos/partials/add_embed" %>
+        <div class="edit-nav">
+            <ul>
+                <li class="highlight-this" id="info">info</li>
+                <li class="li-inline"> / </li>
+                <li id="tags">tags</li>
+                <li class="li-inline"> / </li>
+                <li id="embed">multimedia</li>
+            </ul>
+        </div>
+        
+        <div id="render-target">
+            <%= render "musos/partials/edit_info" %>
+        </div>
+        
     </div>
 </div>
+
+
+
+<script>
+    var renderTarget = document.querySelector('#render-target')
+    var infoBtn = document.querySelector('#info')
+    var tagsBtn = document.querySelector('#tags')
+    var embedBtn = document.querySelector('#embed')
+    
+    infoBtn.addEventListener('click', function(event){
+        
+        renderTarget.innerHTML = `<%= render "musos/partials/edit_info" %>`
+        event.target.classList.add('highlight-this')
+        
+        tagsBtn.classList.remove('highlight-this')
+        embedBtn.classList.remove('highlight-this')
+    })
+
+    tagsBtn.addEventListener('click', function(event){
+        
+        renderTarget.innerHTML = `<%= render "musos/partials/tags" %>`
+        event.target.classList.add('highlight-this')
+
+        infoBtn.classList.remove('highlight-this')
+        embedBtn.classList.remove('highlight-this')
+    })
+
+    embedBtn.addEventListener('click', function(event){
+        
+        renderTarget.innerHTML = `<%= render "musos/partials/add_embed" %>`
+        event.target.classList.add('highlight-this')
+
+        tagsBtn.classList.remove('highlight-this')
+        infoBtn.classList.remove('highlight-this')
+    })
+    
+
+</script>
+
+
+
