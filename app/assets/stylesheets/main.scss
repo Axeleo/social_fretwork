@@ -82,9 +82,11 @@ li {
 .footer-main {
     padding: 10px 20px;
     font-size: 1.2em;
-    color: #141414;
-    background-color: rgb(255, 231, 76);
-    height: 2em;
+    color: rgb(255, 231, 76);
+    border-top: rgb(255, 231, 76);
+    // background-color: #141414;
+    // background-color: rgb(255, 231, 76);
+    height: 1em;
     margin-top: 1em;
     }
 
