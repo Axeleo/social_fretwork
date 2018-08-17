@@ -35,7 +35,7 @@
         <% @muso_embed.each do |muso| %>
           <div class="embed-container">
             <% if muso.url.include? 'youtube' %>
-              <iframe class="youtube-embed" width="560" height="315" src="<%= muso.url.sub('watch?v=', 'embed/') %>?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe class="youtube-embed" src="<%= muso.url.sub('watch?v=', 'embed/') %>?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <% else %>
               <div class="soundcloud-embed">
                 <%= muso.url.sub('<iframe width="100%" height="300"', '<iframe width="50%" height="80"').html_safe %>
