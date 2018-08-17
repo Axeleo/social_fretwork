@@ -21,9 +21,9 @@ class HostsController < ApplicationController
     end
     
     def host_jobs
-    redirect_to "/jobs" and return unless !!current_host
-    @jobs = Job.non_completed.where(host: current_host)
-    render :"jobs/index"
+        redirect_to "/jobs" and return unless !!current_host
+        @jobs = Job.non_completed.where(host: current_host)
+        render :"jobs/index"
     end
 
     private

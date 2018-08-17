@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: social_fretwork_production
-  username: social_fretwork
-  password: <%= ENV['SOCIAL_FRETWORK_DATABASE_PASSWORD'] %>
