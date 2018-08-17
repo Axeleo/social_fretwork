@@ -1,24 +1,30 @@
 <%= link_to "Clear Filters", browse_musos_path %>
 <form action="/search/musos" method="get">
     name
-    <input type="text" name="name_q" value="<%= @filters[:name_q] if !!@filters %>">
+    <input class="input-left" type="text" name="name_q" value="<%= @fltrs[:name_q] if !!@fltrs %>">
     location
-    <input type="text" name="location_q" value="<%= @filters[:location_q] if !!@filters %>">
+    <input class="input-left" type="text" name="location_q" value="<%= @fltrs[:loc_q] if !!@fltrs %>">
     keywords (comma seperated):
-    <input type="text" name="key_words" value="<%= @filters[:key_words] if !!@filters%>">
+    <input class="input-left" type="text" name="key_words" value="<%= @fltrs[:key_words] if !!@fltrs%>">
     Minimum rating:
-    <input type="number" min="0" max="4" name="min_rating" value="<%= @filters[:min_rating] if !!@filters %>">
+    <input class="input-left" type="number" min="0" max="4" name="min_rating" value="<%= @fltrs[:min_rating] if !!@fltrs %>">
     base price:
     min
-    <input type="number" min="0" name="bprice_min" value="<%= @filters[:bprice_min] if !!@filters %>">
+    <input class="input-left" type="number" min="0" name="bprice_min" value="<%= @fltrs[:bprice_min] if !!@fltrs %>">
     max
-    <input type="number" min="0" name="bprice_max" value="<%= @filters[:bprice_max] if !!@filters %>">
+    <input class="input-left" type="number" min="0" name="bprice_max" value="<%= @fltrs[:bprice_max] if !!@fltrs %>">
 
 
-    <button>Search...</button>
+    <button class="submit-btn">Search...</button>
 </form>
 
 <% @muso_results.each do |muso| %>
-    <p><%= muso.name %></p>
-
+    <a href="/musos/<%= muso.id %>">
+        <div class="tile" style="background-image: url(<%= muso.avatar.url(:view) %>);">
+            <div class="text">
+                <h2><%= muso.name %></h2>
+                <p><%= muso.location %></p>
+            </div>
+        </div>
+    </a>
 <% end %>
