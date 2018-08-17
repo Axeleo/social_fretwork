@@ -214,3 +214,20 @@ h2 {
     font-size: .8em;
     background-color: #F8FFE5;
 }
+
+.muso-media-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-container {
+    height: 80%;
+    width: 80%;
+}
+
+
+iframe {
+    width: 58vw;
+    height: 40vh;
+}
