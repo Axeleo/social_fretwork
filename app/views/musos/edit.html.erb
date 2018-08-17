@@ -4,7 +4,7 @@
     <div class="box-container">
         <div class="edit-nav">
             <ul>
-                <li id="info">info</li>
+                <li class="highlight-this" id="info">info</li>
                 <li class="li-inline"> / </li>
                 <li id="tags">tags</li>
                 <li class="li-inline"> / </li>
@@ -23,23 +23,35 @@
 
 <script>
     var renderTarget = document.querySelector('#render-target')
+    var infoBtn = document.querySelector('#info')
+    var tagsBtn = document.querySelector('#tags')
+    var embedBtn = document.querySelector('#embed')
     
-    document.querySelector('#info').addEventListener('click', function(event){
+    infoBtn.addEventListener('click', function(event){
         
         renderTarget.innerHTML = `<%= render "musos/partials/edit_info" %>`
-        // event.target.classList.add('highlight-this')
+        event.target.classList.add('highlight-this')
+        
+        tagsBtn.classList.remove('highlight-this')
+        embedBtn.classList.remove('highlight-this')
     })
 
-    document.querySelector('#tags').addEventListener('click', function(event){
+    tagsBtn.addEventListener('click', function(event){
         
         renderTarget.innerHTML = `<%= render "musos/partials/tags" %>`
-        // event.target.classList.add('highlight-this')
+        event.target.classList.add('highlight-this')
+
+        infoBtn.classList.remove('highlight-this')
+        embedBtn.classList.remove('highlight-this')
     })
 
-    document.querySelector('#embed').addEventListener('click', function(event){
+    embedBtn.addEventListener('click', function(event){
         
         renderTarget.innerHTML = `<%= render "musos/partials/add_embed" %>`
-        // event.target.classList.add('highlight-this')
+        event.target.classList.add('highlight-this')
+
+        tagsBtn.classList.remove('highlight-this')
+        infoBtn.classList.remove('highlight-this')
     })
     
 
