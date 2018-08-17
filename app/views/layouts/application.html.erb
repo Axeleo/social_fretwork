@@ -17,7 +17,7 @@
       <ul class="main-nav">
       <% if !logged_in? %>
         <div class="left-nav">
-          <li class="nav-link menu__item menu__item--current"><a class="menu__link" href='/musos'>browse musos</a></li>
+          <li class="nav-link menu__item"><a class="menu__link" href='/musos'>browse musos</a></li>
           <li class="nav-link menu__item"><a class="menu__link" href='#'>about us</a></li>
         </div>
         <div class="home-nav">
@@ -38,7 +38,7 @@
         <li class="nav-link menu__item"><a class="menu__link" href='/signup/musos'>be a Muso</a></li>
       <% elsif !!current_muso %>
        <div class="left-nav">
-          <li class="nav-link menu__item menu__item--current"><a class="menu__link" href='/jobs'>browse jobs</a></li>
+          <li class="nav-link menu__item"><a class="menu__link" href='/jobs'>browse jobs</a></li>
           <li class="nav-link menu__item"><a class="menu__link" href='#'>my jobs</a></li>
       </div>
       <div class="home-nav">
@@ -59,7 +59,7 @@
           <li class="nav-link menu__item"><a class="menu__link" href="/musos/<%= current_muso.id%>">view profile</a></li>
       <% elsif !!current_host %>
         <div class="left-nav">
-          <li class="nav-link menu__item menu__item--current"><a class="menu__link" href='/musos'>browse musos</a></li>
+          <li class="nav-link menu__item"><a class="menu__link" href='/musos'>browse musos</a></li>
           <li class="nav-link menu__item"><a class="menu__link" href='#'>my events</a></li>
           </div>
           <div class="home-nav">
