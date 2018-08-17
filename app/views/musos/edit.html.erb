@@ -4,23 +4,44 @@
     <div class="box-container">
         <div class="edit-nav">
             <ul>
-                <li><a href="">edit info</a></li>
-                <li><a href="musos/partials/tags">edit tags</a></li>
-                <li><a href="musos/partials/add_embed">edit multimedia</a></li>
+                <li id="info">edit info</li>
+                <li id="tags">edit tags</li>
+                <li id="embed">edit multimedia</li>
             </ul>
         </div>
         
-        
-        <%= render "musos/partials/edit_info" %>
-
+        <div id="render-target">
+            <%= render "musos/partials/edit_info" %>
+        </div>
         
     </div>
 </div>
 
 
+
+<script>
+    var renderTarget = document.querySelector('#render-target')
+    
+    document.querySelector('#info').addEventListener('click', function(event){
+        renderTarget.innerHTML = "<%= render "musos/partials/edit_info" %>"
+    })
+
+    document.querySelector('#tags').addEventListener('click', function(event){
+        renderTarget.innerHTML = "<%= render "musos/partials/tags" %>"
+    })
+
+    document.querySelector('#embed').addEventListener('click', function(event){
+        renderTarget.innerHTML = "<%= render "musos/partials/add_embed" %>"
+    })
+    
+
+</script>
+
+
 <%= render "musos/partials/tags" %>
 <%= render "musos/partials/add_embed" %>
-        
+
+
 
 
 
