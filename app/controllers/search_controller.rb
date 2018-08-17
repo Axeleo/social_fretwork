@@ -15,7 +15,7 @@ class SearchController < ApplicationController
 
         queries << [:where, :base_price => min_price..max_price] 
 
-        min_rating = @fltrs[:rating_min].empty? ? 0 : @fltrs[:min_rating].to_i
+        min_rating = @fltrs[:min_rating].empty? ? 0 : @fltrs[:min_rating].to_i
         
         @muso_results = queries.inject(Muso) { |obj, method_and_args| obj.send(*method_and_args) }.select { |result| result.average_rating >= min_rating }
     end
