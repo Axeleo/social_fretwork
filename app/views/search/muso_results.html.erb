@@ -1,5 +1,5 @@
 <%= link_to "Clear Filters", browse_musos_path %>
-<form action="/search/musos" method="get">
+<form action="/search/musos" method="get" style="display:flex; flex-wrap:wrap;">
     name
     <input class="input-left" type="text" name="name_q" value="<%= @fltrs[:name_q] if !!@fltrs %>">
     location
