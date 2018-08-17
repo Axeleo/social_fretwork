@@ -15,6 +15,7 @@ body {
 }
 
 .main-nav {
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     // background-color: rgba($color: rgb(23, 16, 56), $alpha: 0);
@@ -69,14 +70,23 @@ li {
     text-align: center;
 }
 
-footer {
-    flex-shrink: 0;
-    padding: 10px;
-    text-align: center;
-    background-color: rgba($color: rgb(23, 16, 56), $alpha: 0);
-    mix-blend-mode: multiply;
-    color: whitesmoke;
-}
+// footer {
+//     flex-shrink: 0;
+//     padding: 10px;
+//     text-align: center;
+//     background-color: rgba($color: rgb(23, 16, 56), $alpha: 0);
+//     mix-blend-mode: multiply;
+//     color: whitesmoke;
+// }
+
+.footer-main {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: rgb(255, 231, 76);
+    border-top: rgb(255, 231, 76);
+    height: 1em;
+    position: left;
+    }
 
 // buttonsssss
 .logout-btn, .login-btn, .signup-btn {
@@ -96,16 +106,16 @@ footer {
 }
 
 
-.nav-link:hover {
+// .nav-link:hover {
     
-    border: 1px solid black;
-    background-color: black;
-    color: white;
-    // padding: 10px;
-    // transition: all .3s ease-out;
+//     border: 1px solid black;
+//     background-color: black;
+//     color: white;
+//     // padding: 10px;
+//     // transition: all .3s ease-out;
 
     
-}
+// }
 
 .tag-btn {
     display: inline-block;

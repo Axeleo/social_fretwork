@@ -1,50 +1,94 @@
 
 
-
-
-
 .logo {
   position: relative;
+  top: -40px;
+  left: -60px;
   background-color: white;
   height: 140%;
   color: black;
-  font-size: 44px;
+  font-size: 22px;
 }
 
 .upper-fret {
-  top: 10px;
-  right: 140px;
+  top: 5px;
+  right: 70px;
   position: absolute;
-  border: 3px solid black;
+  border: 2px solid black;
   text-align: center;
-  padding: 5px 5px 5px 20px;
+  padding: 3px 5px 3px 10px;
 }
 
 .lower-fret {
-  top: 85px;
-  right: 40px;
+  top: 43px;
+  right: 20px;
   position: absolute;
-  border: 3px solid black;
+  border: 2px solid black;
   text-align: center;
-  padding: 5px 5px 5px 5px;
+  padding: 3px 3px 3px 3px;
   font-weight: 200;
 }
 
 .lower-fret-detail {
   position: absolute;
-  top:-3px;
-  left: -20px;
-  border: 3px solid black;
-  width: 20px;
-  height: 68px;
+  top: -2px;
+  left: -10px;
+  border: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 10px;
+  height: 32px;
 }
 .upper-fret-detail {
   position: absolute;
-  top:-3px;
-  right: -20px;
-  border: 3px solid black;
-  width: 20px;
-  height: 68px;
+  top:-2px;
+  right: -10px;
+  border: 2px solid black;
+  width: 10px;
+  height: 32px;
 }
+
+// .logo {
+//   position: relative;
+//   background-color: white;
+//   height: 140%;
+//   color: black;
+//   font-size: 44px;
+// }
+
+// .upper-fret {
+//   top: 10px;
+//   right: 140px;
+//   position: absolute;
+//   border: 3px solid black;
+//   text-align: center;
+//   padding: 5px 5px 5px 20px;
+// }
+
+// .lower-fret {
+//   top: 85px;
+//   right: 40px;
+//   position: absolute;
+//   border: 3px solid black;
+//   text-align: center;
+//   padding: 5px 5px 5px 5px;
+//   font-weight: 200;
+// }
+
+// .lower-fret-detail {
+//   position: absolute;
+//   top:-3px;
+//   left: -20px;
+//   border: 3px solid black;
+//   width: 20px;
+//   height: 68px;
+// }
+// .upper-fret-detail {
+//   position: absolute;
+//   top:-3px;
+//   right: -20px;
+//   border: 3px solid black;
+//   width: 20px;
+//   height: 68px;
+// }
 
 
