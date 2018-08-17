@@ -13,7 +13,7 @@
   </head>
     
   <body> 
-    <nav class="menu menu--miranda">
+    <nav class="menu menu--shylock">
       <ul class="main-nav">
       <% if !logged_in? %>
         <div class="left-nav">
@@ -106,12 +106,13 @@
     </nav>
     
     <div class="force-height">
-
       <%= yield %>
     </div>
 
-    <footer>
-      <p>I'm a footer</p>
+
+    <footer class="footer-main">
+      <p>&copy Leaxcato</p>
     </footer>
+    
   </body>
 </html>
