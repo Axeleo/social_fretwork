@@ -64,7 +64,7 @@ article:hover {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    background-color: $color1;
+    background-color: rgb(45, 55, 109);
     position: relative;
 }
 
@@ -85,12 +85,12 @@ h3 {
 
 .budget {
     padding: 1em 0.5em 0.5em 0.5em;
-    background-color: $color2;
+    background-color: #249e14;
     align-self: flex-end;
 }
 .application-count {
     padding: 0.5em;
-    border-bottom: 1px solid $color2;
+    border-bottom: 1px solid #249e14;
     align-self: flex-end;
     text-align: center;
     background-color: black;
